@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AppProvider, useApp } from './context/AppContext';
 import Layout from './components/Layout';
@@ -10,6 +11,16 @@ import Brain from './pages/Brain';
 import Journal from './pages/Journal';
 import Progress from './pages/Progress';
 import './styles/global.css';
+
+// Global error handler
+if (typeof window !== 'undefined') {
+  window.addEventListener('error', (e) => {
+    console.error('Global error:', e.message, e.filename, e.lineno);
+  });
+  window.addEventListener('unhandledrejection', (e) => {
+    console.error('Unhandled rejection:', e.reason);
+  });
+}
 
 function AppContent() {
   const { state } = useApp();
