@@ -1,0 +1,221 @@
+.progress-page {
+  padding-bottom: 100px;
+}
+
+/* Weight Card */
+.weight-card {
+  margin-bottom: 1.5rem;
+}
+
+.wc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.wc-header h3 {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.weight-milestones {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.milestone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.75rem;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  min-width: 80px;
+}
+
+.milestone.current {
+  border: 2px solid var(--blue-glow);
+  box-shadow: 0 0 15px rgba(0, 180, 216, 0.2);
+}
+
+.milestone.target {
+  border: 2px solid var(--yellow-bat);
+  background: rgba(245, 197, 66, 0.05);
+}
+
+.m-label {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.m-value {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.milestone-arrow {
+  color: var(--text-muted);
+}
+
+.weight-chart {
+  margin-bottom: 1.5rem;
+}
+
+.weight-loss-progress {
+  padding: 1rem;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.wlp-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.wlp-value {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--green-success);
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.wlp-remaining {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+  display: block;
+}
+
+.weight-log-list {
+  border-top: 1px solid var(--border-color);
+  padding-top: 1rem;
+}
+
+.weight-log-list h4 {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+}
+
+.weight-log-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.85rem;
+}
+
+.weight-log-item:last-child {
+  border-bottom: none;
+}
+
+.wl-weight {
+  font-family: var(--font-mono);
+  color: var(--blue-glow);
+  font-weight: 700;
+}
+
+.wl-date {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.wl-diff {
+  font-weight: 700;
+}
+
+.wl-diff.down {
+  color: var(--green-success);
+}
+
+.wl-diff.up {
+  color: var(--red-alert);
+}
+
+/* Progress Stats Grid */
+.progress-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.progress-stat-card {
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.ps-icon {
+  margin-bottom: 0.25rem;
+}
+
+.ps-value {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.ps-label {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Weekly Chart */
+.weekly-chart-card, .mood-chart-card {
+  margin-bottom: 1rem;
+}
+
+.weekly-chart-card h3, .mood-chart-card h3 {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+@media (max-width: 600px) {
+  .weight-milestones {
+    gap: 0.5rem;
+  }
+
+  .milestone {
+    min-width: 60px;
+    padding: 0.5rem;
+  }
+
+  .m-value {
+    font-size: 0.9rem;
+  }
+
+  .milestone-arrow svg {
+    width: 16px;
+    height: 16px;
+  }
+}

@@ -1,0 +1,581 @@
+.brain-page {
+  padding-bottom: 100px;
+  min-height: 100vh;
+}
+
+.brain-playing {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: var(--bg-primary);
+  overflow-y: auto;
+}
+
+.brain-playing-header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border-color);
+  z-index: 10;
+}
+
+.bp-header-info {
+  text-align: center;
+}
+
+.bp-game-name {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--blue-glow);
+}
+
+.bp-level {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.bp-score-value {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--yellow-bat);
+}
+
+.bp-score-label {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+}
+
+.brain-stats {
+  display: flex;
+  justify-content: space-around;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.brain-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.bs-icon {
+  color: var(--blue-glow);
+  margin-bottom: 0.25rem;
+}
+
+.bs-value {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.bs-label {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.brain-games-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.brain-game-card {
+  background: var(--bg-card);
+  border: 2px solid var(--border-color);
+  border-radius: 14px;
+  padding: 1.25rem;
+  color: var(--text-primary);
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.brain-game-card:hover {
+  box-shadow: 0 0 25px rgba(0, 180, 216, 0.2);
+}
+
+.bgc-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--bg-secondary);
+  border: 2px solid;
+  margin-bottom: 0.5rem;
+}
+
+.bgc-icon {
+  font-size: 1.5rem;
+}
+
+.brain-game-card h3 {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.brain-game-card p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.bgc-play {
+  font-size: 0.75rem;
+  color: var(--blue-glow);
+  font-weight: 700;
+  margin-top: auto;
+}
+
+/* Game Area */
+.game-container {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.game-instruction {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.obs-timer {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-family: var(--font-mono);
+  color: var(--blue-glow);
+  margin-left: 0.5rem;
+}
+
+/* Memory */
+.memory-grid {
+  display: grid;
+  gap: 8px;
+  max-width: 300px;
+}
+
+.memory-cell {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  border: 2px solid var(--border-color);
+  background: var(--bg-card);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.memory-cell.active {
+  background: var(--blue-glow);
+  box-shadow: 0 0 15px rgba(0, 180, 216, 0.5);
+}
+
+.memory-cell.selected {
+  background: var(--yellow-bat);
+  box-shadow: 0 0 15px rgba(245, 197, 66, 0.5);
+}
+
+.submit-btn {
+  margin-top: 1rem;
+}
+
+/* Pattern */
+.pattern-display {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pattern-num {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--blue-glow);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.pattern-arrow {
+  color: var(--text-muted);
+}
+
+.pattern-question {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--yellow-bat);
+  animation: pulse-glow 1.5s infinite;
+}
+
+/* Math */
+.math-display {
+  text-align: center;
+}
+
+.math-time {
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  color: var(--red-alert);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.math-question {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+/* Logic */
+.clues-box {
+  width: 100%;
+  max-width: 500px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.clues-box h4 {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  color: var(--yellow-bat);
+  margin-bottom: 0.75rem;
+}
+
+.clue {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+  line-height: 1.5;
+}
+
+.clue:last-child {
+  border-bottom: none;
+}
+
+.suspects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 500px;
+}
+
+.suspect-btn {
+  background: var(--bg-card);
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  padding: 1rem;
+  color: var(--text-primary);
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.suspect-btn:hover:not(:disabled) {
+  border-color: var(--blue-glow);
+  transform: translateY(-2px);
+}
+
+.suspect-btn.correct {
+  border-color: var(--green-success);
+  background: rgba(6, 214, 160, 0.1);
+}
+
+.suspect-btn.wrong {
+  border-color: var(--red-alert);
+  background: rgba(239, 35, 60, 0.1);
+}
+
+.suspect-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.suspect-info {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.suspect-result {
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.suspect-btn.correct .suspect-result { color: var(--green-success); }
+.suspect-btn.wrong .suspect-result { color: var(--red-alert); }
+
+/* Reflex */
+.reflex-area {
+  width: 100%;
+  height: 60vh;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s ease;
+}
+
+.reflex-idle {
+  text-align: center;
+}
+
+.reflex-idle p {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.reflex-warn {
+  color: var(--red-alert);
+  font-size: 0.85rem !important;
+}
+
+.reflex-wait {
+  text-align: center;
+}
+
+.pulse-ring {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 4px solid var(--red-alert);
+  animation: pulse-glow 1s infinite;
+  margin: 1rem auto 0;
+}
+
+.reflex-go {
+  text-align: center;
+}
+
+.reflex-go p {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--green-success);
+  text-shadow: 0 0 30px rgba(6, 214, 160, 0.5);
+}
+
+.reflex-result {
+  text-align: center;
+  padding: 2rem;
+}
+
+.reflex-stats {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+.reflex-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+/* Options */
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+.option-btn {
+  padding: 1rem;
+  background: var(--bg-card);
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.option-btn:hover {
+  border-color: var(--blue-glow);
+  box-shadow: var(--shadow-glow);
+}
+
+/* Observation */
+.observation-grids {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.obs-grid {
+  display: grid;
+  gap: 4px;
+}
+
+.obs-cell {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.obs-cell:hover {
+  border-color: var(--blue-glow);
+}
+
+.obs-cell.found {
+  border-color: var(--green-success);
+  background: rgba(6, 214, 160, 0.1);
+}
+
+.vs-text {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--red-alert);
+}
+
+.found-count {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* Brain Result */
+.brain-result {
+  text-align: center;
+  padding: 3rem 1.5rem;
+}
+
+.result-icon {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  animation: scale-in 0.5s ease;
+}
+
+.brain-result h2 {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.result-stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.result-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.rs-value {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--yellow-bat);
+}
+
+.rs-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.result-message {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.result-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+/* Feedback Toast */
+.feedback-toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.75rem 2rem;
+  background: var(--bg-elevated);
+  border: 2px solid var(--blue-glow);
+  border-radius: 12px;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--blue-glow);
+  box-shadow: var(--shadow-glow-strong);
+  z-index: 300;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .brain-games-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .suspects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .options-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .math-question {
+    font-size: 2rem;
+  }
+
+  .observation-grids {
+    flex-direction: column;
+  }
+
+  .vs-text {
+    transform: rotate(90deg);
+  }
+}

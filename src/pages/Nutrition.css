@@ -1,0 +1,382 @@
+.nutrition-page {
+  padding-bottom: 100px;
+}
+
+/* Calorie Card */
+.calorie-card {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.calorie-ring {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.calorie-ring svg {
+  width: 100%;
+  height: 100%;
+}
+
+.calorie-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.calorie-current {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--blue-glow), var(--green-success));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.calorie-max {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.calorie-remaining {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.calorie-macros {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.macro-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.macro-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  width: 80px;
+  letter-spacing: 0.05em;
+}
+
+.macro-value {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  width: 100px;
+}
+
+.macro-bar {
+  flex: 1;
+  height: 6px;
+  background: rgba(0, 180, 216, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.macro-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+.macro-fill.protein {
+  background: var(--green-success);
+}
+
+.macro-fill.water {
+  background: var(--blue-glow);
+}
+
+.water-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(0, 180, 216, 0.1);
+  border: 1px solid rgba(0, 180, 216, 0.3);
+  border-radius: 8px;
+  color: var(--blue-glow);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.water-btn:hover {
+  background: rgba(0, 180, 216, 0.2);
+  box-shadow: 0 0 15px rgba(0, 180, 216, 0.2);
+}
+
+/* Meal Cards */
+.meals-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.meal-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.meal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1.25rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.meal-header:hover {
+  background: var(--bg-card-hover);
+}
+
+.meal-info {
+  flex: 1;
+}
+
+.meal-time {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--blue-glow);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.meal-header h3 {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  margin: 0.25rem 0;
+}
+
+.meal-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.meal-summary {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.15rem;
+}
+
+.meal-calories {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--blue-glow);
+}
+
+.meal-protein {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.meal-content {
+  padding: 0 1.25rem 1.25rem;
+  overflow: hidden;
+}
+
+.foods-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.food-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.75rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-primary);
+  text-align: left;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.food-item.logged {
+  border-color: var(--green-success);
+  background: rgba(6, 214, 160, 0.05);
+}
+
+.food-check {
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.food-item.logged .food-check {
+  color: var(--green-success);
+}
+
+.food-name {
+  flex: 1;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.food-serving {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.food-cal {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--blue-glow);
+}
+
+.food-protein {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  width: 45px;
+  text-align: right;
+}
+
+.meal-note {
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  background: rgba(245, 197, 66, 0.05);
+  border: 1px solid rgba(245, 197, 66, 0.2);
+  border-radius: 8px;
+  border-left: 3px solid var(--yellow-bat);
+}
+
+.note-label {
+  font-size: 0.75rem;
+  color: var(--yellow-dim);
+  font-weight: 700;
+}
+
+.meal-note p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-top: 0.25rem;
+  line-height: 1.5;
+}
+
+/* Guidelines */
+.guidelines-card {
+  margin-bottom: 1rem;
+}
+
+.guidelines-card h3 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: var(--yellow-bat);
+}
+
+.guidelines-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.guidelines-list li {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.guidelines-list li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: var(--blue-glow);
+}
+
+/* Supplements */
+.supplements-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.supplements-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: left;
+}
+
+.supplements-list {
+  padding: 0 1.25rem 1.25rem;
+}
+
+.supplement-item {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  align-items: center;
+}
+
+.sup-name {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--green-success);
+}
+
+.sup-purpose {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.sup-timing {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-align: right;
+}
+
+@media (max-width: 600px) {
+  .food-serving {
+    display: none;
+  }
+
+  .food-protein {
+    width: auto;
+  }
+
+  .supplement-item {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  .sup-timing {
+    text-align: left;
+  }
+}

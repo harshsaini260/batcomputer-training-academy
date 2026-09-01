@@ -1,0 +1,532 @@
+.workout-page {
+  min-height: 100vh;
+  padding-bottom: 100px;
+}
+
+.page-title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+/* Phase Selector */
+.phase-selector {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.phase-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1rem;
+  background: var(--bg-card);
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  color: var(--text-primary);
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.phase-btn.active {
+  border-color: var(--blue-glow);
+  box-shadow: 0 0 15px rgba(0, 180, 216, 0.2);
+}
+
+.phase-name {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.phase-desc {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Day Selector */
+.day-selector {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.day-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.75rem 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  min-width: 100px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.day-btn.active {
+  border-color: var(--blue-glow);
+  color: var(--blue-glow);
+  background: rgba(0, 180, 216, 0.05);
+}
+
+.day-number {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.day-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.day-focus {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+/* Day Detail */
+.day-detail {
+  margin-bottom: 1.5rem;
+}
+
+.day-detail-header {
+  margin-bottom: 1rem;
+}
+
+.day-detail-header h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.day-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.warmup-cooldown {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.wc-item {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.75rem;
+}
+
+.wc-label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+  color: var(--blue-glow);
+}
+
+.wc-text {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* Exercise List */
+.exercise-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.exercise-item {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+
+.exercise-item:hover {
+  border-color: var(--blue-glow);
+  transform: translateX(4px);
+}
+
+.exercise-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.exercise-num {
+  background: var(--blue-glow);
+  color: var(--bg-primary);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.exercise-name {
+  flex: 1;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.exercise-equip {
+  font-size: 0.65rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+  background: rgba(0, 180, 216, 0.1);
+  color: var(--blue-glow);
+  border: 1px solid rgba(0, 180, 216, 0.2);
+}
+
+.exercise-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.spec {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.exercise-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 0.5rem;
+  background: var(--bg-card);
+  border-radius: 6px;
+  margin-top: 0.5rem;
+}
+
+.start-btn {
+  width: 100%;
+  font-size: 1rem;
+  padding: 1rem;
+}
+
+/* Active Workout */
+.workout-active {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.active-workout-header {
+  padding: 1.5rem;
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.awh-progress {
+  margin-bottom: 0.5rem;
+}
+
+.awh-info {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.awh-timer, .awh-progress-text {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.active-exercise {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.5rem;
+  gap: 2rem;
+}
+
+.exercise-display {
+  text-align: center;
+}
+
+.exercise-emoji {
+  font-size: 6rem;
+  display: block;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 20px rgba(0, 180, 216, 0.5));
+}
+
+.exercise-current-name {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.exercise-focus {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.exercise-instruction {
+  background: var(--bg-card);
+  padding: 0.75rem;
+  border-radius: 8px;
+  border-left: 3px solid var(--yellow-bat);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin: 0 auto;
+  max-width: 400px;
+  text-align: left;
+}
+
+.set-tracker {
+  text-align: center;
+}
+
+.set-ring {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 1rem;
+}
+
+.set-info {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.set-current {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--blue-glow), var(--green-success));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.set-total {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--text-muted);
+}
+
+.set-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5rem;
+}
+
+.set-reps {
+  font-family: var(--font-mono);
+  color: var(--blue-glow);
+  font-size: 0.9rem;
+}
+
+.active-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.set-complete-btn, .exercise-complete-btn {
+  width: 100%;
+  padding: 1.25rem;
+  font-size: 1.05rem;
+}
+
+.quit-btn {
+  margin-top: auto;
+}
+
+/* Rest Timer */
+.rest-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 15, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.rest-card {
+  text-align: center;
+  padding: 2rem;
+}
+
+.rest-timer-ring {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  margin: 0 auto 1.5rem;
+}
+
+.rest-timer-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--blue-glow);
+}
+
+.rest-label {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.rest-next {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+/* Completion */
+.completion-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.completion-content {
+  text-align: center;
+  padding: 2rem;
+  max-width: 500px;
+}
+
+.completion-bat {
+  font-size: 6rem;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 0 30px rgba(245, 197, 66, 0.5));
+}
+
+.completion-title {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.completion-subtitle {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+.completion-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+}
+
+.completion-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.cs-value {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--yellow-bat);
+}
+
+.cs-label {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.completion-message {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.completion-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .warmup-cooldown {
+    grid-template-columns: 1fr;
+  }
+
+  .completion-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .exercise-emoji {
+    font-size: 4rem;
+  }
+
+  .exercise-current-name {
+    font-size: 1.4rem;
+  }
+
+  .completion-title {
+    font-size: 1.8rem;
+  }
+
+  .completion-actions {
+    flex-direction: column;
+  }
+
+  .phase-selector {
+    grid-template-columns: 1fr;
+  }
+}

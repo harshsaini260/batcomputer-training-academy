@@ -1,0 +1,503 @@
+// ─── TRAINING DATA ───
+
+export const TRAINING_PHASES = {
+  BEGINNER: { label: "Recruit", color: "#00b4d8", minDays: 3, maxDays: 4 },
+  INTERMEDIATE: { label: "Agent", color: "#7b2cbf", minDays: 4, maxDays: 5 },
+  ADVANCED: { label: "Knight", color: "#f5c542", minDays: 5, maxDays: 6 },
+  ELITE: { label: "Dark Knight", color: "#ef233c", minDays: 6, maxDays: 7 },
+};
+
+export const WORKOUT_PLANS = {
+  BEGINNER: {
+    name: "Gotham Recruit Protocol",
+    description: "Foundation building. No prior experience required. Focus on form and consistency.",
+    frequency: "3-4 days/week",
+    weeks: 8,
+    days: {
+      1: {
+        name: "Foundation Day 1 – Push",
+        type: "strength",
+        focus: "Chest, Shoulders, Triceps",
+        exercises: [
+          { name: "Wall Push-Ups", sets: 3, reps: "12-15", rest: "60s", equipment: "wall", note: "Keep core tight, full range of motion" },
+          { name: "Chair Dips", sets: 3, reps: "8-10", rest: "60s", equipment: "chair", note: "Control the descent" },
+          { name: "Pike Push-Ups", sets: 3, reps: "6-8", rest: "60s", equipment: "none", note: "Targets shoulders" },
+          { name: "Superman Hold", sets: 3, reps: "15s hold", rest: "45s", equipment: "none", note: "Lift chest and legs" },
+        ],
+        warmup: "5 min brisk walk + arm circles + shoulder rolls",
+        cooldown: "5 min stretching (chest, shoulders, triceps)",
+      },
+      2: {
+        name: "Foundation Day 2 – Pull",
+        type: "strength",
+        focus: "Back, Biceps",
+        exercises: [
+          { name: "Doorframe Rows", sets: 3, reps: "10-12", rest: "60s", equipment: "door", note: "Lean back, pull chest to frame" },
+          { name: "Inverted Rows (Table)", sets: 3, reps: "8-10", rest: "60s", equipment: "table", note: "Use sturdy table edge" },
+          { name: "Towel Rows (Door)", sets: 3, reps: "10-12", rest: "60s", equipment: "towel+door", note: "Wrap towel around doorknob" },
+          { name: "Prone W-Raises", sets: 3, reps: "12-15", rest: "45s", equipment: "none", note: "Lie face down, raise arms in W" },
+        ],
+        warmup: "5 min arm swings + band pull-aparts (or towel)",
+        cooldown: "5 min stretching (back, biceps, lats)",
+      },
+      3: {
+        name: "Foundation Day 3 – Legs & Core",
+        type: "strength",
+        focus: "Legs, Core",
+        exercises: [
+          { name: "Bodyweight Squats", sets: 3, reps: "15-20", rest: "60s", equipment: "none", note: "Chest up, knees tracking toes" },
+          { name: "Reverse Lunges", sets: 3, reps: "8 each leg", rest: "60s", equipment: "none", note: "Step back, controlled" },
+          { name: "Glute Bridges", sets: 3, reps: "15-20", rest: "45s", equipment: "none", note: "Squeeze glutes at top" },
+          { name: "Plank", sets: 3, reps: "20-30s", rest: "45s", equipment: "none", note: "Straight body line" },
+          { name: "Dead Bugs", sets: 3, reps: "10 each side", rest: "45s", equipment: "none", note: "Lower back pressed to floor" },
+        ],
+        warmup: "5 min hip circles + leg swings",
+        cooldown: "5 min stretching (quads, hamstrings, hip flexors)",
+      },
+      4: {
+        name: "Foundation Day 4 – Full Body",
+        type: "endurance",
+        focus: "Full Body Circuit",
+        exercises: [
+          { name: "Circuit: Squat → Push-up → Lunge → Plank", sets: 3, reps: "10 each, 30s plank", rest: "90s between rounds", equipment: "none", note: "Minimal rest, continuous movement" },
+          { name: "Jumping Jacks", sets: 3, reps: "30s", rest: "30s", equipment: "none", note: "Explosive but controlled" },
+          { name: "Mountain Climbers", sets: 3, reps: "20 each leg", rest: "45s", equipment: "none", note: "Drive knees to chest fast" },
+        ],
+        warmup: "5 min jumping jacks + high knees",
+        cooldown: "5 min full body stretch",
+      },
+    },
+  },
+  INTERMEDIATE: {
+    name: "Agent Protocol",
+    description: "Level up your game. Introduce resistance and complexity.",
+    frequency: "4-5 days/week",
+    weeks: 12,
+    days: {
+      1: {
+        name: "Agent Day 1 – Upper Push Power",
+        type: "strength",
+        focus: "Chest, Shoulders, Triceps",
+        exercises: [
+          { name: "Diamond Push-Ups", sets: 4, reps: "10-12", rest: "90s", equipment: "none", note: "Hands in diamond, focus on triceps" },
+          { name: "Pike Push-Ups (Elevated)", sets: 4, reps: "8-10", rest: "90s", equipment: "chair", note: "Feet elevated on chair" },
+          { name: "Tricep Extensions (Water Bottle)", sets: 3, reps: "12-15", rest: "60s", equipment: "water bottle", note: "Use filled water bottles" },
+          { name: "Lateral Raises (Water Bottle)", sets: 3, reps: "12-15", rest: "60s", equipment: "water bottle", note: "Full range of motion" },
+        ],
+        warmup: "5 min cardio + arm circles + band work",
+        cooldown: "5 min chest/shoulder stretch",
+      },
+      2: {
+        name: "Agent Day 2 – Upper Pull Power",
+        type: "strength",
+        focus: "Back, Biceps, Rear Delts",
+        exercises: [
+          { name: "Wide Pull-Ups (Door Towel)", sets: 4, reps: "8-10", rest: "90s", equipment: "towel+door", note: "Use towel over door" },
+          { name: "Single Arm Rows (Backpack)", sets: 3, reps: "10 each", rest: "60s", equipment: "backpack", note: "Lean on wall, row with one arm" },
+          { name: "Face Pulls (Towel)", sets: 3, reps: "15", rest: "60s", equipment: "towel+door", note: "Pull toward forehead" },
+          { name: "Hammer Curls (Water Bottles)", sets: 3, reps: "12 each", rest: "60s", equipment: "water bottles", note: "Neutral grip" },
+        ],
+        warmup: "5 min band work + arm circles",
+        cooldown: "5 min back/bicep stretch",
+      },
+      3: {
+        name: "Agent Day 3 – Leg Power",
+        type: "strength",
+        focus: "Legs, Glutes",
+        exercises: [
+          { name: "Jump Squats", sets: 4, reps: "12", rest: "90s", equipment: "none", note: "Explosive jump, soft landing" },
+          { name: "Walking Lunges", sets: 3, reps: "10 each leg", rest: "60s", equipment: "none", note: "Step forward, controlled" },
+          { name: "Single Leg Glute Bridges", sets: 3, reps: "10 each", rest: "60s", equipment: "none", note: "One leg extended, drive through heel" },
+          { name: "Calf Raises (Elevated)", sets: 4, reps: "20", rest: "45s", equipment: "step/curb", note: "Full stretch at bottom" },
+        ],
+        warmup: "5 min leg swings + hip circles",
+        cooldown: "5 min leg stretch",
+      },
+      4: {
+        name: "Agent Day 4 – Core Crusher",
+        type: "endurance",
+        focus: "Core",
+        exercises: [
+          { name: "Hollow Body Hold", sets: 4, reps: "20-30s", rest: "45s", equipment: "none", note: "Lower back pressed down" },
+          { name: "Russian Twists (Backpack)", sets: 3, reps: "20 each side", rest: "45s", equipment: "backpack", note: "Hold backpack for resistance" },
+          { name: "Leg Raises", sets: 4, reps: "10-12", rest: "60s", equipment: "none", note: "Control the descent" },
+          { name: "Side Plank", sets: 3, reps: "20s each side", rest: "45s", equipment: "none", note: "Hip lifted, straight line" },
+        ],
+        warmup: "5 min light cardio + torso twists",
+        cooldown: "5 min core stretch",
+      },
+      5: {
+        name: "Agent Day 5 – Full Body Combat",
+        type: "endurance",
+        focus: "Full Body HIIT",
+        exercises: [
+          { name: "Burpees", sets: 4, reps: "8-10", rest: "90s", equipment: "none", note: "Full body explosive movement" },
+          { name: "Squat Thrusts", sets: 3, reps: "15", rest: "60s", equipment: "none", note: "Fast feet, plank position" },
+          { name: "Tuck Jumps", sets: 3, reps: "10", rest: "60s", equipment: "none", note: "Explosive, soft landing" },
+        ],
+        warmup: "5 min dynamic stretches",
+        cooldown: "5 min full body stretch",
+      },
+    },
+  },
+};
+
+// Will be computed dynamically
+export const ADVANCED_PLAN = null;
+export const ELITE_PLAN = null;
+
+export const CARDIO_TEMPLATES = [
+  {
+    id: "run-basic",
+    name: "Road Runner",
+    description: "Basic running intervals around your neighborhood",
+    type: "running",
+    difficulty: "beginner",
+    duration: "20-30 min",
+    calories: 200,
+  },
+  {
+    id: "shadow-run",
+    name: "Shadow Run",
+    description: "Stealth running — try to make zero noise on your footfalls",
+    type: "running",
+    difficulty: "intermediate",
+    duration: "30-40 min",
+    calories: 350,
+  },
+  {
+    id: "rooftop-climb",
+    name: "Rooftop Stair Climb",
+    description: "Find a tall building. Climb stairs. Repeat.",
+    type: "stairs",
+    difficulty: "intermediate",
+    duration: "20-30 min",
+    calories: 300,
+  },
+  {
+    id: "bat-leap",
+    name: "Parkour Fundamentals",
+    description: "Vault, climb, jump. Train your body to move through any environment.",
+    type: "parkour",
+    difficulty: "advanced",
+    duration: "45-60 min",
+    calories: 500,
+  },
+  {
+    id: "cold-water",
+    name: "Cold Water Immersion",
+    description: "Ice bath / cold shower. Build mental toughness and recovery.",
+    type: "cold",
+    difficulty: "advanced",
+    duration: "5-10 min",
+    calories: 50,
+    mental: true,
+  },
+];
+
+export const NUTRITION_PLAN = {
+  name: "Wayne Manor Diet – Vegetarian Protocol",
+  description: "High-protein vegetarian diet optimized for muscle building and fat loss. Built for a 59kg body with belly fat reduction goal.",
+  dailyCalories: 1800,
+  proteinTarget: 110, // g per day
+  meals: [
+    {
+      id: "breakfast",
+      name: "Pre-Dawn Fuel (Alfred's Special)",
+      time: "6:30 AM",
+      description: "High-protein start to the day. Fuel before any physical activity.",
+      calories: 400,
+      protein: 22,
+      foods: [
+        { name: "Oatmeal (1 cup cooked)", serving: "1 cup", calories: 154, protein: 5 },
+        { name: "Peanut Butter", serving: "2 tbsp", calories: 190, protein: 8 },
+        { name: "Banana", serving: "1 medium", calories: 105, protein: 1 },
+        { name: "Protein Powder (Whey/Casein)", serving: "1 scoop", calories: 120, protein: 25 },
+        { name: "Chia Seeds", serving: "1 tbsp", calories: 60, protein: 2 },
+        { name: "Almonds", serving: "5-6 pieces", calories: 35, protein: 1 },
+      ],
+      note: "Eat 30 min before training if training in morning. Otherwise eat within 1hr of waking.",
+    },
+    {
+      id: "mid-morning",
+      name: "Alfred's Mid-Morning Snack",
+      time: "10:00 AM",
+      description: "Keep metabolism active. Prevent energy crash.",
+      calories: 200,
+      protein: 12,
+      foods: [
+        { name: "Greek Yogurt (unsweetened)", serving: "1 cup", calories: 100, protein: 17 },
+        { name: "Mixed Nuts (Walnuts, Almonds)", serving: "1 small handful", calories: 100, protein: 3 },
+      ],
+      note: "If training mid-morning, eat this after training.",
+    },
+    {
+      id: "lunch",
+      name: "Gordon's Patrol Lunch",
+      time: "1:30 PM",
+      description: "Maximum protein with complex carbs for sustained energy.",
+      calories: 500,
+      protein: 35,
+      foods: [
+        { name: "Paneer (Cottage Cheese)", serving: "150g", calories: 265, protein: 28 },
+        { name: "Brown Rice", serving: "1 cup cooked", calories: 216, protein: 5 },
+        { name: "Mixed Vegetables (Broccoli, Bell Pepper, Spinach)", serving: "2 cups", calories: 80, protein: 5 },
+        { name: "Dal (Lentil Curry)", serving: "1 cup", calories: 230, protein: 16 },
+        { name: "Green Salad", serving: "1 bowl", calories: 30, protein: 2 },
+        { name: "Olive Oil (for cooking)", serving: "1 tbsp", calories: 119, protein: 0 },
+      ],
+      note: "Focus on eating vegetables first, then protein, then carbs. This sequence prevents insulin spikes.",
+    },
+    {
+      id: "pre-workout",
+      name: "Pre-Battle Fuel",
+      time: "30 min before workout",
+      description: "Quick energy for intense training sessions.",
+      calories: 150,
+      protein: 5,
+      foods: [
+        { name: "Apple + Peanut Butter", serving: "1 apple + 1 tbsp PB", calories: 150, protein: 4 },
+        { name: "OR", serving: "", calories: 0, protein: 0 },
+        { name: "Black Coffee", serving: "1 cup", calories: 2, protein: 0 },
+        { name: "OR", serving: "", calories: 0, protein: 0 },
+        { name: "Dates (2-3)", serving: "2-3 dates", calories: 60, protein: 1 },
+      ],
+      note: "Choose ONE option. Coffee is best for focus. Dates are best for energy.",
+    },
+    {
+      id: "dinner",
+      name: "Batcave Recovery Dinner",
+      time: "8:00 PM",
+      description: "Post-training recovery. Maximize protein absorption.",
+      calories: 450,
+      protein: 38,
+      foods: [
+        { name: "Chickpeas/Chana", serving: "1 cup cooked", calories: 269, protein: 15 },
+        { name: "Tofu (Pan-fried)", serving: "150g", calories: 150, protein: 16 },
+        { name: "Quinoa", serving: "0.5 cup cooked", calories: 111, protein: 4 },
+        { name: "Palak (Spinach)", serving: "2 cups cooked", calories: 40, protein: 5 },
+        { name: "Greek Yogurt", serving: "0.5 cup", calories: 50, protein: 8 },
+      ],
+      note: "Eat within 2 hours of training. The protein + carb combo triggers muscle repair.",
+    },
+    {
+      id: "before-bed",
+      name: "Night Watch Snack",
+      time: "10:00 PM",
+      description: "Slow-digesting protein for overnight recovery.",
+      calories: 200,
+      protein: 18,
+      foods: [
+        { name: "Casein Protein Shake OR", serving: "1 scoop", calories: 120, protein: 24 },
+        { name: "Warm Milk + Turmeric (Golden Milk)", serving: "1 cup", calories: 80, protein: 8 },
+      ],
+      note: "This prevents muscle breakdown during sleep. Critical for recovery.",
+    },
+  ],
+  guidelines: [
+    "Drink 3-4 liters of water daily. The Batcave is dark and you need clear focus.",
+    "Limit sugar to under 30g/day. Sugar clouds the mind.",
+    "No processed foods. If it comes in a packet with more than 5 ingredients, Alfred says no.",
+    "Cheat meal: ONCE per week. Not 'cheat day'. ONE meal. Saturday dinner is recommended.",
+    "Meal prep on Sundays. Eat like Bruce Wayne plans, not Bruce Wayne panics.",
+    "Track EVERYTHING. Knowledge is power. Data is the ultimate weapon.",
+    "Sleep 7-8 hours minimum. Batman operates on 3 but you're not Batman… yet.",
+  ],
+  supplements: [
+    { name: "Whey Protein", purpose: "Muscle repair and growth", timing: "Post-workout or breakfast" },
+    { name: "Creatine Monohydrate", purpose: "Strength and power output", timing: "Any time, daily 5g" },
+    { name: "Vitamin D3", purpose: "Immune system, bone health", timing: "Morning with breakfast" },
+    { name: "Omega-3 (Vegetarian)", purpose: "Brain health, inflammation", timing: "With dinner" },
+    { name: "Multivitamin", purpose: "Fill nutritional gaps", timing: "With breakfast" },
+    { name: "Ashwagandha", purpose: "Stress management, testosterone", timing: "Before bed" },
+  ],
+};
+
+export const BAT_QUOTES = [
+  { text: "It's not who I am underneath, but what I DO that defines me.", source: "Batman (Bruce Wayne)", category: "identity" },
+  { text: "Why do we fall? So we can learn to pick ourselves up.", source: "Thomas Wayne", category: "resilience" },
+  { text: "I have one rule. Never kill. Anything else is a warning.", source: "Batman", category: "code" },
+  { text: "The night is darkest just before the dawn. And I promise you, the dawn is coming.", source: "Harvey Dent", category: "hope" },
+  { text: "A hero can be anyone. Even a man doing something as simple and reassuring as putting a coat around a young boy's shoulders to let him know the world hadn't ended.", source: "Batman", category: "heroism" },
+  { text: "You either die a hero or you live long enough to see yourself become the villain.", source: "Harvey Dent", category: "truth" },
+  { text: "I am vengeance. I am the night. I am Batman.", source: "Batman", category: "identity" },
+  { text: "Sometimes the truth isn't good enough, sometimes people deserve more. Sometimes people deserve to have their faith rewarded.", source: "Batman", category: "hope" },
+  { text: "All men have limits. They learn what they are and learn not to exceed them. I ignore mine.", source: "Batman", category: "strength" },
+  { text: "I'm whatever Gotham needs me to be.", source: "Batman", category: "identity" },
+  { text: "The mind is not a vessel to be filled, but a fire to be kindled.", source: "Plutarch", category: "mind" },
+  { text: "Am I not straining at the limits of my strength?", source: "Batman", category: "strength" },
+  { text: "A criminal is not complicated. What you always fear is what you always see.", source: "Batman", category: "detective" },
+  { text: "Crime in this city will continue taking its toll. Until I teach the guilty to fear the dark.", source: "Batman", category: "mission" },
+  { text: "I won't kill you, but I don't have to save you.", source: "Batman", category: "code" },
+  { text: "You don't get to choose the demons you live with. You only get to choose which demons you fight.", source: "Batman (Scott Snyder)", category: "resilience" },
+  { text: "There is a difference between you and me. We both look into the abyss, but when the abyss looks back into us… I BLINK.", source: "Batman (Joker)", category: "strength" },
+  { text: "The world only makes sense if you force it to.", source: "Batman (Grant Morrison)", category: "detective" },
+  { text: "Fear is a tool. When that light hits the sky, it's not just a signal. It's a warning. It's a warning to them.", source: "Batman", category: "mission" },
+  { text: "If you kill a killer, the number of killers in the room remains the same.", source: "Batman", category: "code" },
+  { text: "I don't want to kill anyone. But I will if I have to. That's the difference between you and me.", source: "Batman", category: "code" },
+  { text: "It's not the size of the dog in the fight, it's the size of the fight in the dog.", source: "Mark Twain", category: "strength" },
+  { text: "The body achieves what the mind believes.", source: "Unknown", category: "mind" },
+  { text: "Discipline is the bridge between goals and accomplishment.", source: "Jim Rohn", category: "discipline" },
+  { text: "You don't have to be great to start, but you have to start to be great.", source: "Zig Ziglar", category: "discipline" },
+  { text: "Motivation is what gets you started. Habit is what keeps you going.", source: "Jim Ryun", category: "discipline" },
+  { text: "The only bad workout is the one that didn't happen.", source: "Unknown", category: "discipline" },
+  { text: "Sweat now, shine later.", source: "Unknown", category: "discipline" },
+  { text: "Pain is temporary. Pride is forever.", source: "Unknown", category: "strength" },
+];
+
+export const ACHIEVEMENTS = [
+  { id: "first_step", name: "First Step", description: "Complete your first workout", icon: "👟", requirement: { type: "workouts", count: 1 }, rarity: "common" },
+  { id: "week_warrior", name: "Week Warrior", description: "Train for 7 consecutive days", icon: "⚔️", requirement: { type: "streak", count: 7 }, rarity: "uncommon" },
+  { id: "two_weeks", name: "Two Week Titan", description: "Train for 14 consecutive days", icon: "🗡️", requirement: { type: "streak", count: 14 }, rarity: "rare" },
+  { id: "month_master", name: "Month of Madness", description: "Train for 30 consecutive days", icon: "🏆", requirement: { type: "streak", count: 30 }, rarity: "epic" },
+  { id: "fifty_workouts", name: "Rookie to Regular", description: "Complete 50 workouts", icon: "💪", requirement: { type: "workouts", count: 50 }, rarity: "common" },
+  { id: "hundred_workouts", name: "Centurion", description: "Complete 100 workouts", icon: "🎯", requirement: { type: "workouts", count: 100 }, rarity: "rare" },
+  { id: "first_pr", name: "Personal Record", description: "Beat your first personal record", icon: "⭐", requirement: { type: "prs", count: 1 }, rarity: "common" },
+  { id: "pr_machine", name: "PR Machine", description: "Beat 10 personal records", icon: "🔥", requirement: { type: "prs", count: 10 }, rarity: "rare" },
+  { id: "early_bird", name: "Dawn Patrol", description: "Complete a workout before 6 AM", icon: "🌅", requirement: { type: "early_workout", count: 1 }, rarity: "uncommon" },
+  { id: "ninja_mind", name: "Ninja Mind", description: "Score 100% on a brain training session", icon: "🧠", requirement: { type: "brain_perfect", count: 1 }, rarity: "rare" },
+  { id: "journal_keeper", name: "Archivist", description: "Journal for 7 consecutive days", icon: "📔", requirement: { type: "journal_streak", count: 7 }, rarity: "uncommon" },
+  { id: "nutrition_week", name: "Clean Eater", description: "Follow nutrition plan for 7 consecutive days", icon: "🥗", requirement: { type: "nutrition_streak", count: 7 }, rarity: "uncommon" },
+  { id: "iron_will", name: "Iron Will", description: "Complete a workout even when you don't feel like it (5+ times)", icon: "🛡️", requirement: { type: "grind", count: 5 }, rarity: "epic" },
+  { id: "calorie_crusher", name: "Calorie Crusher", description: "Burn 1000+ calories in one week", icon: "💥", requirement: { type: "weekly_calories", count: 1000 }, rarity: "rare" },
+  { id: "detective", name: "Detective Mode", description: "Solve 10 brain training puzzles", icon: "🔍", requirement: { type: "brain_puzzles", count: 10 }, rarity: "uncommon" },
+  { id: "goon_handler", name: "Goon Handler", description: "Complete 30 days of the training program", icon: "👊", requirement: { type: "days_total", count: 30 }, rarity: "epic" },
+  { id: "belly_be_gone", name: "Belly Be Gone", description: "Log your first weight measurement showing progress", icon: "📉", requirement: { type: "weight_log", count: 1 }, rarity: "common" },
+  { id: "night_owl", name: "Night Owl", description: "Complete a workout after 10 PM", icon: "🦉", requirement: { type: "late_workout", count: 1 }, rarity: "uncommon" },
+  { id: "variety_pack", name: "Variety Pack", description: "Try 5 different workout types", icon: "🎨", requirement: { type: "workout_types", count: 5 }, rarity: "uncommon" },
+  { id: "no_quit", name: "No Quit", description: "Never miss a scheduled workout for 2 weeks", icon: "💎", requirement: { type: "perfect_attendance", count: 14 }, rarity: "epic" },
+];
+
+export const BRAIN_EXERCISES = {
+  memory: {
+    name: "Memory Matrix",
+    description: "Memorize a pattern of highlighted cells, then recreate it from memory.",
+    levels: 10,
+    getLevel: (level) => ({
+      gridSize: Math.min(4 + Math.floor(level / 2), 8),
+      showTime: Math.max(3000 - (level * 200), 1500),
+      patternSize: Math.min(3 + level, 8),
+    }),
+  },
+  pattern: {
+    name: "Pattern Detective",
+    description: "Find the next item in a complex pattern sequence. Think like a detective.",
+    levels: 10,
+    getLevel: (level) => ({
+      sequenceLength: 4 + level,
+      complexity: Math.min(level + 1, 5),
+    }),
+  },
+  math: {
+    name: "Mental Math Assault",
+    description: "Solve arithmetic problems under time pressure. Speed and accuracy.",
+    levels: 10,
+    getLevel: (level) => ({
+      operations: ["+", "-", "×"][Math.min(level, 2)],
+      maxNumber: 10 + (level * 5),
+      timeLimit: Math.max(60 - (level * 3), 20),
+    }),
+  },
+  logic: {
+    name: "Logic Gate",
+    description: "Deductive reasoning puzzles. Solve the mystery. Use the Batcomputer.",
+    levels: 10,
+    getLevel: (level) => ({
+      clues: 3 + Math.floor(level / 2),
+      suspects: 2 + Math.min(level, 4),
+    }),
+  },
+  reflexes: {
+    name: "Reflex Training",
+    description: "Test and improve your reaction time. A slower mind means a slower bat.",
+    levels: 10,
+    getLevel: (level) => ({
+      rounds: 5 + level,
+      minDelay: Math.max(1500 - (level * 100), 500),
+      maxDelay: Math.max(4000 - (level * 200), 1500),
+    }),
+  },
+  observation: {
+    name: "Keen Eye",
+    description: "Find the differences between two seemingly identical images. Attention to detail.",
+    levels: 10,
+    getLevel: (level) => ({
+      differences: 2 + Math.floor(level / 2),
+      timeLimit: 30 + (level * 5),
+    }),
+  },
+};
+
+export const JOURNAL_PROMPTS = [
+  "What physical challenge pushed you to your limits today?",
+  "How does today's training make you stronger for tomorrow?",
+  "What thought kept you going when your body wanted to quit?",
+  "Describe a moment today where you felt like Batman — determined, focused, unstoppable.",
+  "What did you learn about yourself through today's training?",
+  "How close did you get to your limits? How did it feel?",
+  "If Alfred saw you train today, what would he say?",
+  "What fear did you face and overcome in today's workout?",
+  "Rate your mental clarity before vs after today's training session.",
+  "What's one thing you did today that your old self would have been too weak to do?",
+  "Describe the sensation of pushing through pain. Where did you find the extra gear?",
+  "How did your mind react when your body started to fail? What does this teach you?",
+  "Today's training was… [complete the thought]",
+  "What is the one thing you're most proud of from today?",
+  "Write a letter to yourself 6 months from now. What do you want to have achieved?",
+  "What's holding you back mentally that you need to destroy?",
+  "Describe a time you wanted to quit but didn't. What changed?",
+  "How would the Gotham streets be different with you at peak condition?",
+  "What training goal feels impossible right now? Why?",
+  "What's the connection between physical discipline and mental discipline?",
+];
+
+export const MOTIVATION_LEVELS = [
+  { level: "Just Starting", message: "Every Gotham hero started as a nobody. Step one is always the hardest.", icon: "🌱" },
+  { level: "Building the Cave", message: "Every rep is a brick. Your Batcave is being built one workout at a time.", icon: "🔨" },
+  { level: "Suiting Up", message: "The suit isn't just armor. It's discipline made visible.", icon: "🦇" },
+  { level: "Patrol Mode", message: "You're not just training anymore. You're patrolling. Your city needs you.", icon: "🦇" },
+  { level: "Dark Knight Rising", message: "The transformation is visible. Gotham doesn't know it yet, but you're becoming its protector.", icon: "⚡" },
+  { level: "Wayne Level", message: "Peak condition. Peak mind. You are what Gotham needs. Now go protect it.", icon: "👑" },
+];
+
+export const EXERCISE_CATEGORIES = {
+  push: { name: "Push (Chest, Shoulders, Triceps)", color: "#ef233c", icon: "💪" },
+  pull: { name: "Pull (Back, Biceps)", color: "#00b4d8", icon: "🏋️" },
+  legs: { name: "Legs & Glutes", color: "#f5c542", icon: "🦵" },
+  core: { name: "Core & Abs", color: "#7b2cbf", icon: "🔥" },
+  cardio: { name: "Cardio & Endurance", color: "#06d6a0", icon: "❤️" },
+  fullbody: { name: "Full Body", color: "#ff6b6b", icon: "⚡" },
+  flexibility: { name: "Flexibility & Mobility", color: "#48cae4", icon: "🤸" },
+};
+
+export const EQUIPMENT_LIST = {
+  none: { name: "No Equipment (Bodyweight)", icon: "🙌" },
+  chair: { name: "Chair/Sturdy Surface", icon: "🪑" },
+  door: { name: "Doorway", icon: "🚪" },
+  towel: { name: "Towel", icon: "🧣" },
+  "water-bottles": { name: "Water Bottles (as weights)", icon: "💧" },
+  backpack: { name: "Backpack (add weight)", icon: "🎒" },
+  "step-curb": { name: "Step or Curb", icon: "🪜" },
+  "pull-up-bar": { name: "Pull-Up Bar (optional upgrade)", icon: "🔗" },
+  "resistance-band": { name: "Resistance Band (optional)", icon: "〰️" },
+};
+
+export const WEEKLY_SCHEDULE_TEMPLATE = {
+  MON: { workout: true, focus: "Strength – Push/Pull" },
+  TUE: { workout: true, focus: "Strength – Legs/Core" },
+  WED: { workout: false, focus: "Active Recovery (walk, stretch, yoga)" },
+  THU: { workout: true, focus: "Strength – Upper Body" },
+  FRI: { workout: true, focus: "Strength – Full Body/Cardio" },
+  SAT: { workout: false, focus: "Active Recovery or Fun Activity" },
+  SUN: { workout: false, focus: "Rest Day – Journal & Plan" },
+};
+
+export const GOAL_MILESTONES = [
+  { target: 5, unit: "kg", label: "First 5kg", reward: "🥉 Bronze Bat" },
+  { target: 10, unit: "kg", label: "10kg Milestone", reward: "🥈 Silver Bat" },
+  { target: 15, unit: "kg", label: "15kg Milestone", reward: "🥇 Gold Bat" },
+  { target: 20, unit: "kg", label: "20kg Milestone", reward: "💎 Diamond Bat" },
+  { target: 57, unit: "kg", label: "Under 57kg – In Shape", reward: "🦇 Dark Knight" },
+  { target: 55, unit: "kg", label: "Under 55kg – Peak", reward: "👑 Wayne Peak" },
+  { target: 52, unit: "kg", label: "Under 52kg – Leviathan", reward: "🔥 Leviathan Level" },
+];
