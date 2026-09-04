@@ -1,5 +1,8 @@
+/* ─── Onboarding — Apple HIG · Optimus Prime ─── */
+
 .onboarding {
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,17 +24,17 @@
     0deg,
     transparent,
     transparent 2px,
-    rgba(0, 180, 216, 0.015) 2px,
-    rgba(0, 180, 216, 0.015) 4px
+    rgba(201, 26, 37, 0.015) 2px,
+    rgba(201, 26, 37, 0.015) 4px
   );
   pointer-events: none;
 }
 
 .particle {
   position: absolute;
-  background: var(--blue-glow);
+  background: var(--prime-red);
   border-radius: 50%;
-  opacity: 0.3;
+  opacity: 0.25;
   animation: particle 4s ease-out infinite;
 }
 
@@ -39,51 +42,51 @@
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 800px;
-  padding: 2rem;
+  max-width: 780px;
+  padding: var(--s-7) var(--s-5);
 }
 
 .onboarding-progress {
-  margin-bottom: 2rem;
+  margin-bottom: var(--s-7);
 }
 
 .step-indicators {
   display: flex;
   justify-content: center;
-  gap: 1rem;
-  margin-top: 1rem;
+  gap: var(--s-4);
+  margin-top: var(--s-4);
 }
 
 .step-dot {
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 13px;
   font-weight: 700;
-  border: 2px solid var(--border-color);
-  color: var(--text-muted);
+  border: 2px solid var(--separator);
+  color: var(--text-tertiary);
   transition: all 0.3s ease;
 }
 
 .step-dot.active {
-  border-color: var(--blue-glow);
-  color: var(--blue-glow);
-  box-shadow: 0 0 15px rgba(0, 180, 216, 0.4);
-  background: rgba(0, 180, 216, 0.1);
+  border-color: var(--prime-red);
+  color: white;
+  background: var(--prime-red);
+  box-shadow: 0 0 16px rgba(201, 26, 37, 0.4);
 }
 
 .step-dot.completed {
   border-color: var(--green-success);
-  color: var(--bg-primary);
+  color: white;
   background: var(--green-success);
 }
 
 .onboarding-content {
-  min-height: 400px;
+  min-height: 420px;
 }
 
 .step-welcome {
@@ -91,152 +94,133 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  gap: var(--s-6);
 }
 
 .step-welcome h1 {
-  font-family: var(--font-display);
-  font-size: 2.5rem;
-  font-weight: 800;
-  background: linear-gradient(135deg, var(--blue-glow), var(--yellow-bat));
+  font-size: 28px;
+  background: linear-gradient(135deg, var(--prime-red), var(--prime-blue));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .step-welcome h2 {
-  font-family: var(--font-display);
-  font-size: 1rem;
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 500;
   color: var(--text-secondary);
-  letter-spacing: 0.3em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
 .step-welcome p {
-  font-size: 1.1rem;
+  font-size: 16px;
   color: var(--text-secondary);
-  line-height: 1.8;
+  line-height: 1.7;
   max-width: 500px;
 }
 
 .onboarding-stat {
-  margin-top: 1rem;
-  padding: 1.5rem 2rem;
+  margin-top: var(--s-5);
+  padding: var(--s-6) var(--s-7);
   background: var(--bg-card);
   border: 1px solid var(--border-color);
-  border-radius: 12px;
+  border-radius: var(--r-lg);
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 4px;
+  text-align: center;
 }
 
 .stat-label {
-  font-size: 0.75rem;
-  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-tertiary);
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
 
 .stat-value {
   font-family: var(--font-display);
-  font-size: 1.5rem;
+  font-size: 22px;
   font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 .stat-sub {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--blue-glow);
+  font-size: 12px;
+  color: var(--prime-red);
+  letter-spacing: 0.04em;
 }
 
 /* Step 1 – Form */
-.step-form h1 {
-  font-family: var(--font-display);
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-.step-form > p {
-  color: var(--text-secondary);
-  margin-bottom: 2rem;
-}
+.step-form h1 { font-size: 22px; margin-bottom: 4px; }
+.step-form > p { color: var(--text-secondary); margin-bottom: var(--s-6); }
 
 .form-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.25rem;
+  gap: var(--s-5);
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 6px;
 }
 
 .form-group label {
-  font-size: 0.8rem;
-  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-tertiary);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-weight: 600;
+  letter-spacing: 0.06em;
 }
 
 .form-group input {
-  background: var(--bg-secondary);
+  background: var(--bg-card);
   border: 1px solid var(--border-color);
-  border-radius: 8px;
-  padding: 0.75rem 1rem;
+  border-radius: var(--r-md);
+  padding: 14px;
+  font-size: 16px;
   color: var(--text-primary);
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  position: relative;
+  transition: border-color 0.2s ease;
 }
 
 .form-group input:focus {
   outline: none;
-  border-color: var(--blue-glow);
-  box-shadow: 0 0 15px rgba(0, 180, 216, 0.2);
+  border-color: var(--prime-red);
+  box-shadow: 0 0 0 3px var(--prime-red-soft);
 }
 
 .form-unit {
-  font-size: 0.75rem;
+  font-size: 12px;
   color: var(--text-muted);
-  margin-top: 0.25rem;
+  margin-top: 2px;
 }
 
 .bmi-display {
-  margin-top: 1.5rem;
-  padding: 1rem;
+  margin-top: var(--s-5);
+  padding: var(--s-4) var(--s-5);
   background: var(--bg-card);
   border: 1px solid var(--border-color);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+  border-radius: var(--r-md);
   font-family: var(--font-mono);
-  font-size: 0.9rem;
+  font-size: 15px;
 }
 
-.bmi-category {
-  color: var(--text-muted);
-}
+.bmi-category { color: var(--text-tertiary); margin-left: 6px; }
 
 /* Step 2 – Mission */
-.step-mission h1 {
-  font-family: var(--font-display);
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-.step-mission > p {
-  color: var(--text-secondary);
-  margin-bottom: 2rem;
-}
+.step-mission h1 { font-size: 22px; margin-bottom: 4px; }
+.step-mission > p { color: var(--text-secondary); margin-bottom: var(--s-6); }
 
 .goals-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--s-4);
 }
 
 .goal-card {
@@ -244,70 +228,52 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.75rem;
+  gap: var(--s-3);
+  padding: var(--s-5);
 }
 
-.goal-icon {
-  font-size: 2.5rem;
-}
+.goal-icon { font-size: 32px; }
 
 .goal-card h3 {
-  font-family: var(--font-display);
-  font-size: 0.85rem;
-  color: var(--blue-glow);
+  font-size: 14px;
+  color: var(--prime-red);
+  letter-spacing: 0.02em;
 }
 
 .goal-card p {
-  font-size: 0.85rem;
+  font-size: 13px;
   color: var(--text-secondary);
   line-height: 1.5;
 }
 
 /* Step 3 – Equipment */
-.step-equipment h1 {
-  font-family: var(--font-display);
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-.step-equipment > p {
-  color: var(--text-secondary);
-  margin-bottom: 2rem;
-}
+.step-equipment h1 { font-size: 22px; margin-bottom: 4px; }
+.step-equipment > p { color: var(--text-secondary); margin-bottom: var(--s-6); }
 
 .equipment-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 1rem;
+  gap: var(--s-4);
 }
 
 .equip-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.75rem;
-  padding: 1.5rem 1rem;
-  background: var(--bg-card);
-  border: 2px solid var(--border-color);
-  border-radius: 12px;
-  color: var(--text-secondary);
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  font-weight: 600;
+  gap: var(--s-3);
+  padding: var(--s-5) var(--s-4);
+  border-radius: var(--r-lg);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
 }
 
 .equip-card.selected {
-  border-color: var(--blue-glow);
-  color: var(--blue-glow);
-  box-shadow: 0 0 20px rgba(0, 180, 216, 0.2);
-  background: rgba(0, 180, 216, 0.05);
+  background: var(--prime-red-soft) !important;
+  border-color: var(--prime-red) !important;
+  box-shadow: 0 0 16px rgba(201, 26, 37, 0.2);
 }
 
-.equip-icon {
-  font-size: 2rem;
-}
+.equip-icon { font-size: 28px; }
 
 /* Step 4 – Complete */
 .step-complete {
@@ -315,13 +281,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  gap: var(--s-5);
 }
 
 .step-complete h1 {
-  font-family: var(--font-display);
-  font-size: 2rem;
-  background: linear-gradient(135deg, var(--green-success), var(--blue-glow));
+  font-size: 26px;
+  background: linear-gradient(135deg, var(--prime-red), var(--prime-blue));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -330,63 +295,53 @@
 .step-complete > p {
   color: var(--text-secondary);
   max-width: 500px;
+  font-size: 15px;
+  line-height: 1.6;
 }
 
 .summary-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+  gap: var(--s-3);
   width: 100%;
-  max-width: 600px;
+  max-width: 560px;
 }
 
 .summary-item {
-  padding: 1rem;
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+  padding: var(--s-4);
+  text-align: center;
 }
 
 .summary-label {
-  font-size: 0.65rem;
-  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-tertiary);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.06em;
 }
 
 .summary-value {
   font-family: var(--font-display);
-  font-size: 1.1rem;
+  font-size: 16px;
   font-weight: 700;
 }
 
 /* Navigation */
 .onboarding-nav {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-top: 2.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--border-color);
+  gap: var(--s-4);
+  padding-top: var(--s-6);
+  margin-top: var(--s-7);
+  border-top: 1px solid var(--separator);
 }
 
-.nav-spacer {
-  flex: 1;
-}
+.nav-spacer { flex: 1; }
 
 @media (max-width: 600px) {
-  .summary-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .step-welcome h1 {
-    font-size: 1.5rem;
-  }
-
-  .form-grid {
-    grid-template-columns: 1fr;
-  }
+  .summary-grid { grid-template-columns: repeat(2, 1fr); }
+  .step-welcome h1 { font-size: 22px; }
+  .form-grid { grid-template-columns: 1fr; }
+  .goals-grid { grid-template-columns: 1fr; }
+  .onboarding-container { padding: var(--s-5) var(--s-4); }
 }

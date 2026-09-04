@@ -1,25 +1,25 @@
-// ─── TRAINING DATA ───
+// ─── TRAINING DATA — AUTOBOT ARC ───
 
 export const TRAINING_PHASES = {
-  BEGINNER: { label: "Recruit", color: "#00b4d8", minDays: 3, maxDays: 4 },
-  INTERMEDIATE: { label: "Agent", color: "#7b2cbf", minDays: 4, maxDays: 5 },
-  ADVANCED: { label: "Knight", color: "#f5c542", minDays: 5, maxDays: 6 },
-  ELITE: { label: "Dark Knight", color: "#ef233c", minDays: 6, maxDays: 7 },
+  BEGINNER: { label: "Autobot Recruit", color: "#1d3fb5", minDays: 3, maxDays: 4 },
+  INTERMEDIATE: { label: "Cybertronian Guardian", color: "#af52de", minDays: 4, maxDays: 5 },
+  ADVANCED: { label: "Elite Defender", color: "#c91a25", minDays: 5, maxDays: 6 },
+  ELITE: { label: "Prime Commander", color: "#ffb800", minDays: 6, maxDays: 7 },
 };
 
 export const WORKOUT_PLANS = {
   BEGINNER: {
-    name: "Gotham Recruit Protocol",
-    description: "Foundation building. No prior experience required. Focus on form and consistency.",
+    name: "Autobot Recruit Protocol",
+    description: "Foundation building. No prior experience required. Focus on form and consistency. Every journey begins with a single transformation.",
     frequency: "3-4 days/week",
     weeks: 8,
     days: {
       1: {
-        name: "Foundation Day 1 – Push",
+        name: "Recruit Day 1 – Push Power",
         type: "strength",
         focus: "Chest, Shoulders, Triceps",
         exercises: [
-          { name: "Wall Push-Ups", sets: 3, reps: "12-15", rest: "60s", equipment: "wall", note: "Keep core tight, full range of motion" },
+          { name: "Wall Push-Ups", sets: 3, reps: "12-15", rest: "60s", equipment: "wall", note: "Core tight, full range of motion" },
           { name: "Chair Dips", sets: 3, reps: "8-10", rest: "60s", equipment: "chair", note: "Control the descent" },
           { name: "Pike Push-Ups", sets: 3, reps: "6-8", rest: "60s", equipment: "none", note: "Targets shoulders" },
           { name: "Superman Hold", sets: 3, reps: "15s hold", rest: "45s", equipment: "none", note: "Lift chest and legs" },
@@ -28,7 +28,7 @@ export const WORKOUT_PLANS = {
         cooldown: "5 min stretching (chest, shoulders, triceps)",
       },
       2: {
-        name: "Foundation Day 2 – Pull",
+        name: "Recruit Day 2 – Pull Power",
         type: "strength",
         focus: "Back, Biceps",
         exercises: [
@@ -41,7 +41,7 @@ export const WORKOUT_PLANS = {
         cooldown: "5 min stretching (back, biceps, lats)",
       },
       3: {
-        name: "Foundation Day 3 – Legs & Core",
+        name: "Recruit Day 3 – Legs & Core",
         type: "strength",
         focus: "Legs, Core",
         exercises: [
@@ -55,7 +55,7 @@ export const WORKOUT_PLANS = {
         cooldown: "5 min stretching (quads, hamstrings, hip flexors)",
       },
       4: {
-        name: "Foundation Day 4 – Full Body",
+        name: "Recruit Day 4 – Full Body",
         type: "endurance",
         focus: "Full Body Circuit",
         exercises: [
@@ -69,13 +69,13 @@ export const WORKOUT_PLANS = {
     },
   },
   INTERMEDIATE: {
-    name: "Agent Protocol",
-    description: "Level up your game. Introduce resistance and complexity.",
+    name: "Guardian Protocol",
+    description: "Level up your strength. Introduce resistance and complexity. The Matrix of Leadership demands peak physical form.",
     frequency: "4-5 days/week",
     weeks: 12,
     days: {
       1: {
-        name: "Agent Day 1 – Upper Push Power",
+        name: "Guardian Day 1 – Upper Push Power",
         type: "strength",
         focus: "Chest, Shoulders, Triceps",
         exercises: [
@@ -88,7 +88,7 @@ export const WORKOUT_PLANS = {
         cooldown: "5 min chest/shoulder stretch",
       },
       2: {
-        name: "Agent Day 2 – Upper Pull Power",
+        name: "Guardian Day 2 – Upper Pull Power",
         type: "strength",
         focus: "Back, Biceps, Rear Delts",
         exercises: [
@@ -101,7 +101,7 @@ export const WORKOUT_PLANS = {
         cooldown: "5 min back/bicep stretch",
       },
       3: {
-        name: "Agent Day 3 – Leg Power",
+        name: "Guardian Day 3 – Leg Power",
         type: "strength",
         focus: "Legs, Glutes",
         exercises: [
@@ -114,7 +114,7 @@ export const WORKOUT_PLANS = {
         cooldown: "5 min leg stretch",
       },
       4: {
-        name: "Agent Day 4 – Core Crusher",
+        name: "Guardian Day 4 – Core Crusher",
         type: "endurance",
         focus: "Core",
         exercises: [
@@ -127,7 +127,7 @@ export const WORKOUT_PLANS = {
         cooldown: "5 min core stretch",
       },
       5: {
-        name: "Agent Day 5 – Full Body Combat",
+        name: "Guardian Day 5 – Full Body Combat",
         type: "endurance",
         focus: "Full Body HIIT",
         exercises: [
@@ -142,7 +142,6 @@ export const WORKOUT_PLANS = {
   },
 };
 
-// Will be computed dynamically
 export const ADVANCED_PLAN = null;
 export const ELITE_PLAN = null;
 
@@ -150,7 +149,7 @@ export const CARDIO_TEMPLATES = [
   {
     id: "run-basic",
     name: "Road Runner",
-    description: "Basic running intervals around your neighborhood",
+    description: "Running intervals around your neighborhood. Build your ground-pounders.",
     type: "running",
     difficulty: "beginner",
     duration: "20-30 min",
@@ -158,8 +157,8 @@ export const CARDIO_TEMPLATES = [
   },
   {
     id: "shadow-run",
-    name: "Shadow Run",
-    description: "Stealth running — try to make zero noise on your footfalls",
+    name: "Stealth Run",
+    description: "Run as silently as possible. Minimal footfall noise. A Cybertronian moves without detection.",
     type: "running",
     difficulty: "intermediate",
     duration: "30-40 min",
@@ -167,17 +166,17 @@ export const CARDIO_TEMPLATES = [
   },
   {
     id: "rooftop-climb",
-    name: "Rooftop Stair Climb",
-    description: "Find a tall building. Climb stairs. Repeat.",
+    name: "Tower Stair Climb",
+    description: "Find a tall building. Climb stairs. Repeat. Every ascent makes you taller than the Decepticons.",
     type: "stairs",
     difficulty: "intermediate",
     duration: "20-30 min",
     calories: 300,
   },
   {
-    id: "bat-leap",
-    name: "Parkour Fundamentals",
-    description: "Vault, climb, jump. Train your body to move through any environment.",
+    id: "parkour-flow",
+    name: "Parkour Flow",
+    description: "Vault, climb, jump. Train your body to move through any environment. Free your movement.",
     type: "parkour",
     difficulty: "advanced",
     duration: "45-60 min",
@@ -186,7 +185,7 @@ export const CARDIO_TEMPLATES = [
   {
     id: "cold-water",
     name: "Cold Water Immersion",
-    description: "Ice bath / cold shower. Build mental toughness and recovery.",
+    description: "Ice bath / cold shower. Build mental toughness and recovery. A Sentinel endures.",
     type: "cold",
     difficulty: "advanced",
     duration: "5-10 min",
@@ -196,14 +195,14 @@ export const CARDIO_TEMPLATES = [
 ];
 
 export const NUTRITION_PLAN = {
-  name: "Wayne Manor Diet – Vegetarian Protocol",
-  description: "High-protein vegetarian diet optimized for muscle building and fat loss. Built for a 59kg body with belly fat reduction goal.",
+  name: "Cybertron Field Rations – Vegetarian Protocol",
+  description: "High-protein vegetarian diet optimized for muscle building and fat loss. Built for a 59kg frame with belly fat reduction goal. Fuel like a Transformer.",
   dailyCalories: 1800,
-  proteinTarget: 110, // g per day
+  proteinTarget: 110,
   meals: [
     {
       id: "breakfast",
-      name: "Pre-Dawn Fuel (Alfred's Special)",
+      name: "Energon Fuel (Ratchet's Special)",
       time: "6:30 AM",
       description: "High-protein start to the day. Fuel before any physical activity.",
       calories: 400,
@@ -212,7 +211,7 @@ export const NUTRITION_PLAN = {
         { name: "Oatmeal (1 cup cooked)", serving: "1 cup", calories: 154, protein: 5 },
         { name: "Peanut Butter", serving: "2 tbsp", calories: 190, protein: 8 },
         { name: "Banana", serving: "1 medium", calories: 105, protein: 1 },
-        { name: "Protein Powder (Whey/Casein)", serving: "1 scoop", calories: 120, protein: 25 },
+        { name: "Protein Powder", serving: "1 scoop", calories: 120, protein: 25 },
         { name: "Chia Seeds", serving: "1 tbsp", calories: 60, protein: 2 },
         { name: "Almonds", serving: "5-6 pieces", calories: 35, protein: 1 },
       ],
@@ -220,7 +219,7 @@ export const NUTRITION_PLAN = {
     },
     {
       id: "mid-morning",
-      name: "Alfred's Mid-Morning Snack",
+      name: "Ratchet's Mid-Morning Snack",
       time: "10:00 AM",
       description: "Keep metabolism active. Prevent energy crash.",
       calories: 200,
@@ -233,7 +232,7 @@ export const NUTRITION_PLAN = {
     },
     {
       id: "lunch",
-      name: "Gordon's Patrol Lunch",
+      name: "Prime's Patrol Lunch",
       time: "1:30 PM",
       description: "Maximum protein with complex carbs for sustained energy.",
       calories: 500,
@@ -250,7 +249,7 @@ export const NUTRITION_PLAN = {
     },
     {
       id: "pre-workout",
-      name: "Pre-Battle Fuel",
+      name: "Pre-Engagement Fuel",
       time: "30 min before workout",
       description: "Quick energy for intense training sessions.",
       calories: 150,
@@ -266,7 +265,7 @@ export const NUTRITION_PLAN = {
     },
     {
       id: "dinner",
-      name: "Batcave Recovery Dinner",
+      name: "Ark Recovery Dinner",
       time: "8:00 PM",
       description: "Post-training recovery. Maximize protein absorption.",
       calories: 450,
@@ -282,7 +281,7 @@ export const NUTRITION_PLAN = {
     },
     {
       id: "before-bed",
-      name: "Night Watch Snack",
+      name: "Sentinel Snack",
       time: "10:00 PM",
       description: "Slow-digesting protein for overnight recovery.",
       calories: 200,
@@ -295,13 +294,13 @@ export const NUTRITION_PLAN = {
     },
   ],
   guidelines: [
-    "Drink 3-4 liters of water daily. The Batcave is dark and you need clear focus.",
-    "Limit sugar to under 30g/day. Sugar clouds the mind.",
-    "No processed foods. If it comes in a packet with more than 5 ingredients, Alfred says no.",
+    "Drink 3-4 liters of water daily. Clear focus comes from a clear system.",
+    "Limit sugar to under 30g/day. Sugar clouds the processor.",
+    "No processed foods. If it comes in a packet with more than 5 ingredients, Ratchet says no.",
     "Cheat meal: ONCE per week. Not 'cheat day'. ONE meal. Saturday dinner is recommended.",
-    "Meal prep on Sundays. Eat like Bruce Wayne plans, not Bruce Wayne panics.",
+    "Meal prep on Sundays. Plan like a Prime, panic like a rookie.",
     "Track EVERYTHING. Knowledge is power. Data is the ultimate weapon.",
-    "Sleep 7-8 hours minimum. Batman operates on 3 but you're not Batman… yet.",
+    "Sleep 7-8 hours minimum. A Sentinel stands watch, but even they recharge.",
   ],
   supplements: [
     { name: "Whey Protein", purpose: "Muscle repair and growth", timing: "Post-workout or breakfast" },
@@ -309,61 +308,62 @@ export const NUTRITION_PLAN = {
     { name: "Vitamin D3", purpose: "Immune system, bone health", timing: "Morning with breakfast" },
     { name: "Omega-3 (Vegetarian)", purpose: "Brain health, inflammation", timing: "With dinner" },
     { name: "Multivitamin", purpose: "Fill nutritional gaps", timing: "With breakfast" },
-    { name: "Ashwagandha", purpose: "Stress management, testosterone", timing: "Before bed" },
+    { name: "Ashwagandha", purpose: "Stress management, focus", timing: "Before bed" },
   ],
 };
 
-export const BAT_QUOTES = [
-  { text: "It's not who I am underneath, but what I DO that defines me.", source: "Batman (Bruce Wayne)", category: "identity" },
-  { text: "Why do we fall? So we can learn to pick ourselves up.", source: "Thomas Wayne", category: "resilience" },
-  { text: "I have one rule. Never kill. Anything else is a warning.", source: "Batman", category: "code" },
-  { text: "The night is darkest just before the dawn. And I promise you, the dawn is coming.", source: "Harvey Dent", category: "hope" },
-  { text: "A hero can be anyone. Even a man doing something as simple and reassuring as putting a coat around a young boy's shoulders to let him know the world hadn't ended.", source: "Batman", category: "heroism" },
-  { text: "You either die a hero or you live long enough to see yourself become the villain.", source: "Harvey Dent", category: "truth" },
-  { text: "I am vengeance. I am the night. I am Batman.", source: "Batman", category: "identity" },
-  { text: "Sometimes the truth isn't good enough, sometimes people deserve more. Sometimes people deserve to have their faith rewarded.", source: "Batman", category: "hope" },
-  { text: "All men have limits. They learn what they are and learn not to exceed them. I ignore mine.", source: "Batman", category: "strength" },
-  { text: "I'm whatever Gotham needs me to be.", source: "Batman", category: "identity" },
-  { text: "The mind is not a vessel to be filled, but a fire to be kindled.", source: "Plutarch", category: "mind" },
-  { text: "Am I not straining at the limits of my strength?", source: "Batman", category: "strength" },
-  { text: "A criminal is not complicated. What you always fear is what you always see.", source: "Batman", category: "detective" },
-  { text: "Crime in this city will continue taking its toll. Until I teach the guilty to fear the dark.", source: "Batman", category: "mission" },
-  { text: "I won't kill you, but I don't have to save you.", source: "Batman", category: "code" },
-  { text: "You don't get to choose the demons you live with. You only get to choose which demons you fight.", source: "Batman (Scott Snyder)", category: "resilience" },
-  { text: "There is a difference between you and me. We both look into the abyss, but when the abyss looks back into us… I BLINK.", source: "Batman (Joker)", category: "strength" },
-  { text: "The world only makes sense if you force it to.", source: "Batman (Grant Morrison)", category: "detective" },
-  { text: "Fear is a tool. When that light hits the sky, it's not just a signal. It's a warning. It's a warning to them.", source: "Batman", category: "mission" },
-  { text: "If you kill a killer, the number of killers in the room remains the same.", source: "Batman", category: "code" },
-  { text: "I don't want to kill anyone. But I will if I have to. That's the difference between you and me.", source: "Batman", category: "code" },
-  { text: "It's not the size of the dog in the fight, it's the size of the fight in the dog.", source: "Mark Twain", category: "strength" },
-  { text: "The body achieves what the mind believes.", source: "Unknown", category: "mind" },
-  { text: "Discipline is the bridge between goals and accomplishment.", source: "Jim Rohn", category: "discipline" },
-  { text: "You don't have to be great to start, but you have to start to be great.", source: "Zig Ziglar", category: "discipline" },
-  { text: "Motivation is what gets you started. Habit is what keeps you going.", source: "Jim Ryun", category: "discipline" },
-  { text: "The only bad workout is the one that didn't happen.", source: "Unknown", category: "discipline" },
-  { text: "Sweat now, shine later.", source: "Unknown", category: "discipline" },
-  { text: "Pain is temporary. Pride is forever.", source: "Unknown", category: "strength" },
+export const PRIME_QUOTES = [
+  { text: "Freedom is the right of all sentient beings.", source: "Optimus Prime", category: "freedom" },
+  { text: "One shall stand, one shall fall.", source: "Optimus Prime", category: "destiny" },
+  { text: "We must have courage. We must not let the spark die.", source: "Optimus Prime", category: "courage" },
+  { text: "I am Optimus Prime, and I send this message so that our pasts will always be remembered.", source: "Optimus Prime", category: "legacy" },
+  { text: "The key to victory is discipline.", source: "Optimus Prime", category: "discipline" },
+  { text: "A builder, not a destroyer. That is the way of the Autobot.", source: "Optimus Prime", category: "creation" },
+  { text: "We cannot let fear make us our own worst enemies.", source: "Optimus Prime", category: "courage" },
+  { text: "Sometimes even the wisest of us cannot see all ends.", source: "Optimus Prime", category: "wisdom" },
+  { text: "What would you give to feel the Matrix of Leadership burn within your spark?", source: "Optimus Prime", category: "destiny" },
+  { text: "The All Spark created us and it will create a new generation. So it shall be.", source: "Optimus Prime", category: "destiny" },
+  { text: "Even when darkness falls, the light of the Matrix guides us forward.", source: "Optimus Prime", category: "hope" },
+  { text: "The fight is won not by strength alone, but by heart and unity.", source: "Optimus Prime", category: "unity" },
+  { text: "We do not fight because we hate what is in front of us. We fight for what we love behind us.", source: "Optimus Prime", category: "love" },
+  { text: "Cybertron may fall, but the Autobot spark never dies.", source: "Optimus Prime", category: "legacy" },
+  { text: "Rise up, Autobots. Let the spark within burn brighter than ever.", source: "Optimus Prime", category: "courage" },
+  { text: "The strength of one is nothing compared to the strength of many.", source: "Optimus Prime", category: "unity" },
+  { text: "Every challenge is an opportunity to prove your worth as a warrior of light.", source: "Optimus Prime", category: "strength" },
+  { text: "Trust in your crew. Even the mightiest Transformer cannot stand alone against the darkness.", source: "Optimus Prime", category: "unity" },
+  { text: "Do not despair. The Matrix of Leadership chose you for a reason.", source: "Optimus Prime", category: "destiny" },
+  { text: "Today's struggle is tomorrow's strength.", source: "Optimus Prime", category: "strength" },
+  { text: "A true leader does not ask others to do what he will not do himself.", source: "Optimus Prime", category: "leadership" },
+  { text: "Roll out!", source: "Optimus Prime", category: "action" },
+  { text: "The battle for peace is fought on many fronts. Today's workout is one of them.", source: "Optimus Prime", category: "mission" },
+  { text: "Your body is your vessel. Honor it. Train it. Respect it.", source: "Optimus Prime", category: "mind" },
+  { text: "When the going gets tough, the Autobots get going.", source: "Optimus Prime", category: "resilience" },
+  { text: "Victory belongs to the most persevering.", source: "Optimus Prime", category: "discipline" },
+  { text: "You are stronger than your circuits believe.", source: "Optimus Prime", category: "strength" },
+  { text: "No matter how dark the night, the Matrix of Leadership always shines.", source: "Optimus Prime", category: "hope" },
+  { text: "The harder the battle, the greater the glory.", source: "Optimus Prime", category: "courage" },
+  { text: "Protect what matters. Even if you stand alone.", source: "Optimus Prime", category: "love" },
 ];
 
 export const ACHIEVEMENTS = [
-  { id: "first_step", name: "First Step", description: "Complete your first workout", icon: "👟", requirement: { type: "workouts", count: 1 }, rarity: "common" },
-  { id: "week_warrior", name: "Week Warrior", description: "Train for 7 consecutive days", icon: "⚔️", requirement: { type: "streak", count: 7 }, rarity: "uncommon" },
-  { id: "two_weeks", name: "Two Week Titan", description: "Train for 14 consecutive days", icon: "🗡️", requirement: { type: "streak", count: 14 }, rarity: "rare" },
-  { id: "month_master", name: "Month of Madness", description: "Train for 30 consecutive days", icon: "🏆", requirement: { type: "streak", count: 30 }, rarity: "epic" },
-  { id: "fifty_workouts", name: "Rookie to Regular", description: "Complete 50 workouts", icon: "💪", requirement: { type: "workouts", count: 50 }, rarity: "common" },
+  { id: "first_step", name: "First Roll", description: "Complete your first workout", icon: "🦿", requirement: { type: "workouts", count: 1 }, rarity: "common" },
+  { id: "week_warrior", name: "Week Sentinel", description: "Train for 7 consecutive days", icon: "🛡️", requirement: { type: "streak", count: 7 }, rarity: "uncommon" },
+  { id: "two_weeks", name: "Two Week Titan", description: "Train for 14 consecutive days", icon: "⚔️", requirement: { type: "streak", count: 14 }, rarity: "rare" },
+  { id: "month_master", name: "Month of Might", description: "Train for 30 consecutive days", icon: "🏆", requirement: { type: "streak", count: 30 }, rarity: "epic" },
+  { id: "fifty_workouts", name: "Rookie to Veteran", description: "Complete 50 workouts", icon: "⭐", requirement: { type: "workouts", count: 50 }, rarity: "common" },
   { id: "hundred_workouts", name: "Centurion", description: "Complete 100 workouts", icon: "🎯", requirement: { type: "workouts", count: 100 }, rarity: "rare" },
-  { id: "first_pr", name: "Personal Record", description: "Beat your first personal record", icon: "⭐", requirement: { type: "prs", count: 1 }, rarity: "common" },
-  { id: "pr_machine", name: "PR Machine", description: "Beat 10 personal records", icon: "🔥", requirement: { type: "prs", count: 10 }, rarity: "rare" },
+  { id: "first_pr", name: "First Override", description: "Beat your first personal record", icon: "🔥", requirement: { type: "prs", count: 1 }, rarity: "common" },
+  { id: "pr_machine", name: "PR Machine", description: "Beat 10 personal records", icon: "⚡", requirement: { type: "prs", count: 10 }, rarity: "rare" },
   { id: "early_bird", name: "Dawn Patrol", description: "Complete a workout before 6 AM", icon: "🌅", requirement: { type: "early_workout", count: 1 }, rarity: "uncommon" },
-  { id: "ninja_mind", name: "Ninja Mind", description: "Score 100% on a brain training session", icon: "🧠", requirement: { type: "brain_perfect", count: 1 }, rarity: "rare" },
-  { id: "journal_keeper", name: "Archivist", description: "Journal for 7 consecutive days", icon: "📔", requirement: { type: "journal_streak", count: 7 }, rarity: "uncommon" },
-  { id: "nutrition_week", name: "Clean Eater", description: "Follow nutrition plan for 7 consecutive days", icon: "🥗", requirement: { type: "nutrition_streak", count: 7 }, rarity: "uncommon" },
+  { id: "ninja_mind", name: "Detective Mind", description: "Score 100% on a brain training session", icon: "🔍", requirement: { type: "brain_perfect", count: 1 }, rarity: "rare" },
+  { id: "journal_keeper", name: "Archivist", description: "Journal for 7 consecutive days", icon: "📓", requirement: { type: "journal_streak", count: 7 }, rarity: "uncommon" },
+  { id: "nutrition_week", name: "Clean Rations", description: "Follow nutrition plan for 7 consecutive days", icon: "🥗", requirement: { type: "nutrition_streak", count: 7 }, rarity: "uncommon" },
   { id: "iron_will", name: "Iron Will", description: "Complete a workout even when you don't feel like it (5+ times)", icon: "🛡️", requirement: { type: "grind", count: 5 }, rarity: "epic" },
-  { id: "calorie_crusher", name: "Calorie Crusher", description: "Burn 1000+ calories in one week", icon: "💥", requirement: { type: "weekly_calories", count: 1000 }, rarity: "rare" },
-  { id: "detective", name: "Detective Mode", description: "Solve 10 brain training puzzles", icon: "🔍", requirement: { type: "brain_puzzles", count: 10 }, rarity: "uncommon" },
-  { id: "goon_handler", name: "Goon Handler", description: "Complete 30 days of the training program", icon: "👊", requirement: { type: "days_total", count: 30 }, rarity: "epic" },
+  { id: "calorie_crusher", name: "Energon Crusher", description: "Burn 1000+ calories in one week", icon: "💥", requirement: { type: "weekly_calories", count: 1000 }, rarity: "rare" },
+  { id: "detective", name: "Scanner Mode", description: "Solve 10 brain training puzzles", icon: "🔎", requirement: { type: "brain_puzzles", count: 10 }, rarity: "uncommon" },
+  { id: "goon_handler", name: "Group Combat Ready", description: "Complete 30 days of the training program", icon: "👊", requirement: { type: "days_total", count: 30 }, rarity: "epic" },
   { id: "belly_be_gone", name: "Belly Be Gone", description: "Log your first weight measurement showing progress", icon: "📉", requirement: { type: "weight_log", count: 1 }, rarity: "common" },
-  { id: "night_owl", name: "Night Owl", description: "Complete a workout after 10 PM", icon: "🦉", requirement: { type: "late_workout", count: 1 }, rarity: "uncommon" },
+  { id: "night_owl", name: "Night Sentinel", description: "Complete a workout after 10 PM", icon: "🦉", requirement: { type: "late_workout", count: 1 }, rarity: "uncommon" },
   { id: "variety_pack", name: "Variety Pack", description: "Try 5 different workout types", icon: "🎨", requirement: { type: "workout_types", count: 5 }, rarity: "uncommon" },
   { id: "no_quit", name: "No Quit", description: "Never miss a scheduled workout for 2 weeks", icon: "💎", requirement: { type: "perfect_attendance", count: 14 }, rarity: "epic" },
 ];
@@ -371,7 +371,7 @@ export const ACHIEVEMENTS = [
 export const BRAIN_EXERCISES = {
   memory: {
     name: "Memory Matrix",
-    description: "Memorize a pattern of highlighted cells, then recreate it from memory.",
+    description: "Memorize a pattern of highlighted cells, then recreate it from memory. Think like a processor.",
     levels: 10,
     getLevel: (level) => ({
       gridSize: Math.min(4 + Math.floor(level / 2), 8),
@@ -380,8 +380,8 @@ export const BRAIN_EXERCISES = {
     }),
   },
   pattern: {
-    name: "Pattern Detective",
-    description: "Find the next item in a complex pattern sequence. Think like a detective.",
+    name: "Pattern Scanner",
+    description: "Find the next item in a complex pattern sequence. Think like a Prime.",
     levels: 10,
     getLevel: (level) => ({
       sequenceLength: 4 + level,
@@ -400,7 +400,7 @@ export const BRAIN_EXERCISES = {
   },
   logic: {
     name: "Logic Gate",
-    description: "Deductive reasoning puzzles. Solve the mystery. Use the Batcomputer.",
+    description: "Deductive reasoning puzzles. Solve the mystery. Access the mainframe.",
     levels: 10,
     getLevel: (level) => ({
       clues: 3 + Math.floor(level / 2),
@@ -409,7 +409,7 @@ export const BRAIN_EXERCISES = {
   },
   reflexes: {
     name: "Reflex Training",
-    description: "Test and improve your reaction time. A slower mind means a slower bat.",
+    description: "Test and improve your reaction time. A slower mind means a slower response.",
     levels: 10,
     getLevel: (level) => ({
       rounds: 5 + level,
@@ -419,7 +419,7 @@ export const BRAIN_EXERCISES = {
   },
   observation: {
     name: "Keen Eye",
-    description: "Find the differences between two seemingly identical images. Attention to detail.",
+    description: "Find the differences between two seemingly identical images. Attention to detail like a true Sentinel.",
     levels: 10,
     getLevel: (level) => ({
       differences: 2 + Math.floor(level / 2),
@@ -432,10 +432,10 @@ export const JOURNAL_PROMPTS = [
   "What physical challenge pushed you to your limits today?",
   "How does today's training make you stronger for tomorrow?",
   "What thought kept you going when your body wanted to quit?",
-  "Describe a moment today where you felt like Batman — determined, focused, unstoppable.",
+  "Describe a moment today where you felt determined, focused, unstoppable — like Optimus Prime himself.",
   "What did you learn about yourself through today's training?",
   "How close did you get to your limits? How did it feel?",
-  "If Alfred saw you train today, what would he say?",
+  "If Ratchet saw you train today, what would he say?",
   "What fear did you face and overcome in today's workout?",
   "Rate your mental clarity before vs after today's training session.",
   "What's one thing you did today that your old self would have been too weak to do?",
@@ -446,26 +446,26 @@ export const JOURNAL_PROMPTS = [
   "Write a letter to yourself 6 months from now. What do you want to have achieved?",
   "What's holding you back mentally that you need to destroy?",
   "Describe a time you wanted to quit but didn't. What changed?",
-  "How would the Gotham streets be different with you at peak condition?",
+  "How would the streets be different with you at peak condition?",
   "What training goal feels impossible right now? Why?",
   "What's the connection between physical discipline and mental discipline?",
 ];
 
 export const MOTIVATION_LEVELS = [
-  { level: "Just Starting", message: "Every Gotham hero started as a nobody. Step one is always the hardest.", icon: "🌱" },
-  { level: "Building the Cave", message: "Every rep is a brick. Your Batcave is being built one workout at a time.", icon: "🔨" },
-  { level: "Suiting Up", message: "The suit isn't just armor. It's discipline made visible.", icon: "🦇" },
-  { level: "Patrol Mode", message: "You're not just training anymore. You're patrolling. Your city needs you.", icon: "🦇" },
-  { level: "Dark Knight Rising", message: "The transformation is visible. Gotham doesn't know it yet, but you're becoming its protector.", icon: "⚡" },
-  { level: "Wayne Level", message: "Peak condition. Peak mind. You are what Gotham needs. Now go protect it.", icon: "👑" },
+  { level: "Spark Initiated", message: "Every great Transformer started as a spark. Step one is always the hardest.", icon: "🌱" },
+  { level: "Building the Base", message: "Every rep is a brick. Your base is being built one workout at a time.", icon: "🔨" },
+  { level: "Armored Up", message: "The armor isn't just metal. It's discipline made visible.", icon: "🦾" },
+  { level: "Scout Mode", message: "You're not just training anymore. You're scouting. Your team needs you.", icon: "🤖" },
+  { level: "Prime Rising", message: "The transformation is visible. The world doesn't know it yet, but you're becoming its protector.", icon: "⚡" },
+  { level: "Prime Level", message: "Peak condition. Peak mind. You are what the Matrix demands. Now roll out.", icon: "👑" },
 ];
 
 export const EXERCISE_CATEGORIES = {
-  push: { name: "Push (Chest, Shoulders, Triceps)", color: "#ef233c", icon: "💪" },
-  pull: { name: "Pull (Back, Biceps)", color: "#00b4d8", icon: "🏋️" },
-  legs: { name: "Legs & Glutes", color: "#f5c542", icon: "🦵" },
-  core: { name: "Core & Abs", color: "#7b2cbf", icon: "🔥" },
-  cardio: { name: "Cardio & Endurance", color: "#06d6a0", icon: "❤️" },
+  push: { name: "Push (Chest, Shoulders, Triceps)", color: "#c91a25", icon: "💪" },
+  pull: { name: "Pull (Back, Biceps)", color: "#1d3fb5", icon: "🏋️" },
+  legs: { name: "Legs & Glutes", color: "#ffb800", icon: "🦵" },
+  core: { name: "Core & Abs", color: "#af52de", icon: "🔥" },
+  cardio: { name: "Cardio & Endurance", color: "#34c759", icon: "❤️" },
   fullbody: { name: "Full Body", color: "#ff6b6b", icon: "⚡" },
   flexibility: { name: "Flexibility & Mobility", color: "#48cae4", icon: "🤸" },
 };
@@ -493,11 +493,11 @@ export const WEEKLY_SCHEDULE_TEMPLATE = {
 };
 
 export const GOAL_MILESTONES = [
-  { target: 5, unit: "kg", label: "First 5kg", reward: "🥉 Bronze Bat" },
-  { target: 10, unit: "kg", label: "10kg Milestone", reward: "🥈 Silver Bat" },
-  { target: 15, unit: "kg", label: "15kg Milestone", reward: "🥇 Gold Bat" },
-  { target: 20, unit: "kg", label: "20kg Milestone", reward: "💎 Diamond Bat" },
-  { target: 57, unit: "kg", label: "Under 57kg – In Shape", reward: "🦇 Dark Knight" },
-  { target: 55, unit: "kg", label: "Under 55kg – Peak", reward: "👑 Wayne Peak" },
-  { target: 52, unit: "kg", label: "Under 52kg – Leviathan", reward: "🔥 Leviathan Level" },
+  { target: 5, unit: "kg", label: "First 5kg", reward: "🥉 Bronze Cog" },
+  { target: 10, unit: "kg", label: "10kg Milestone", reward: "🥈 Silver Cog" },
+  { target: 15, unit: "kg", label: "15kg Milestone", reward: "🥇 Gold Cog" },
+  { target: 20, unit: "kg", label: "20kg Milestone", reward: "💎 Diamond Cog" },
+  { target: 57, unit: "kg", label: "Under 57kg – In Shape", reward: "🤖 Prime Grade" },
+  { target: 55, unit: "kg", label: "Under 55kg – Elite", reward: "👑 Prime Elite" },
+  { target: 52, unit: "kg", label: "Under 52kg – Commander", reward: "🔥 Prime Commander" },
 ];

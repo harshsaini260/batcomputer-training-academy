@@ -197,7 +197,7 @@ export default function Nutrition() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5 }}
       >
-        <h3>Batman's Nutrition Rules</h3>
+        <h3>Autobot Rations Guide</h3>
         <ul className="guidelines-list">
           {NUTRITION_PLAN.guidelines.map((g, i) => (
             <motion.li key={i} initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.6 + i * 0.05 }}>

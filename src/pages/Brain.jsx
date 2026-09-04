@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { BRAIN_EXERCISES, BAT_QUOTES } from '../data/trainingData';
+import { BRAIN_EXERCISES, PRIME_QUOTES } from '../data/trainingData';
 import { useApp } from '../context/AppContext';
 import { Play, RotateCcw, Trophy, Clock, Zap, Brain as BrainIcon, X, Check, ChevronRight } from 'lucide-react';
 import './Brain.css';
@@ -233,9 +233,9 @@ export default function Brain() {
   // ─── LOGIC GATE ───
   const initLogicGame = (lvl) => {
     const config = exerciseConfig.getLevel(lvl);
-    const names = ['Raven', 'Catwoman', 'Two-Face', 'Penguin', 'Riddler', 'Bane', 'Poison Ivy', 'Killer Croc'];
-    const crimes = ['Jewelry Heist', 'Data Breach', 'Poisoning', 'Kidnapping', 'Arson', 'Smuggling', 'Bank Robbery', 'Blackmail'];
-    const locations = ['Gotham Bank', 'Wayne Tower', 'Arkham Asylum', 'GCPD', 'Iceberg Lounge', 'Ace Chemicals', 'Gotham Port', 'Royal Hotel'];
+    const names = ['Ratchet', 'Bumblebee', 'Ironhide', 'Jazz', 'Starscream', 'Soundwave', 'Megatron', 'Shockwave'];
+    const crimes = ['Energon Theft', 'Data Breach', 'Sabotage', 'Kidnapping', 'Arson', 'Smuggling', 'Base Raid', 'Blackmail'];
+    const locations = ['Iacon', 'Autobot Base', 'Nemesis Bridge', 'Trypticon Bay', 'Kaon Outpost', 'Darkmount', 'Omega Platform', 'Space Bridge'];
 
     const numClues = config.clues;
     const numSuspects = Math.min(config.suspects + Math.floor(Math.random() * 2), names.length);
@@ -456,7 +456,7 @@ export default function Brain() {
       <div className="brain-page page-container">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
           <h1 className="page-title glow-text">Detective Training</h1>
-          <p className="page-subtitle">Sharpen your mind. Batman's greatest weapon isn't his fists.</p>
+          <p className="page-subtitle">Sharpen your mind. Optimus Prime's greatest weapon isn't his ion cannon.</p>
         </motion.div>
 
         <motion.div
@@ -548,10 +548,10 @@ export default function Brain() {
               </div>
             </div>
             <p className="result-message">
-              {score / totalQuestions >= 0.9 ? 'Outstanding! Your mind is a weapon.' :
-               score / totalQuestions >= 0.7 ? 'Well done. The Batcomputer is impressed.' :
-               score / totalQuestions >= 0.5 ? 'Good effort. Every detective starts somewhere.' :
-               'Keep training. Even Batman practiced.'}
+              {score / totalQuestions >= 0.9 ? 'Outstanding! Your mind is a Matrix-level weapon.' :
+               score / totalQuestions >= 0.7 ? 'Well done. The mainframe is impressed.' :
+               score / totalQuestions >= 0.5 ? 'Good effort. Every Sentinel starts somewhere.' :
+               'Keep training. Even Optimus practiced.'}
             </p>
             <div className="result-actions">
               <button className="btn btn-ghost" onClick={resetGame}>Back</button>

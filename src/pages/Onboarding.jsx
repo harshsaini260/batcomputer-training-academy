@@ -1,23 +1,24 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useApp } from '../context/AppContext';
-import BatLogo from '../components/BatLogo';
+import PrimeLogo from '../components/PrimeLogo';
+import ThemeAudio from '../components/ThemeAudio';
 import './Onboarding.css';
 
 const steps = [
   {
     id: 'welcome',
-    title: 'Welcome to the Batcomputer',
-    subtitle: 'The Batcomputer Training Academy',
-    description: 'Every great hero begins with a decision. Tonight, you chose to become more than you were. From September 1st, your transformation begins — the Winter Arc.',
-    icon: '🦇',
+    title: 'Welcome, Autobot.',
+    subtitle: 'The Autobot Arc — Prime Training System',
+    description: 'Freedom is the right of all sentient beings. Tonight, you chose to become more than you were. From September 1st, your transformation begins — the Winter Arc.',
+    icon: '🤖',
     stat: { label: 'Your Mission', value: 'Transform body & mind', sub: 'Winter Arc 2026' },
   },
   {
     id: 'stats',
-    title: 'Your Starting Data',
-    subtitle: 'The Batcomputer needs your metrics',
-    description: 'Bruce Wayne knows every detail about himself. So must you. Accurate data is the foundation of progress.',
+    title: 'Your Metrics',
+    subtitle: 'A Prime knows every detail about their system',
+    description: 'Optimus Prime knows every capability of his own frame. So must you. Accurate data is the foundation of progress.',
     fields: [
       { key: 'weight', label: 'Current Weight (kg)', type: 'number', value: 59, placeholder: '59' },
       { key: 'height', label: 'Height (cm)', type: 'number', value: 160, placeholder: '160' },
@@ -30,12 +31,12 @@ const steps = [
     id: 'mission',
     title: 'Your Mission Briefing',
     subtitle: 'Why are you here?',
-    description: 'The Wayne family needs their protector. Every rep, every meal, every journal entry brings you closer.',
+    description: 'The Matrix of Leadership chose you for a reason. Every rep, every meal, every journal entry brings you closer to your true potential.',
     goals: [
       { title: 'Eliminate Belly Fat', desc: 'Reduce body fat through disciplined training & nutrition', icon: '🎯' },
       { title: 'Build Functional Strength', desc: 'Strong enough to protect your family — single-handedly if needed', icon: '💪' },
-      { title: 'Train Like Batman', desc: 'Master martial arts fundamentals, cardio, and combat readiness', icon: '🦇' },
-      { title: 'Sharpen the Mind', desc: 'Become the world\'s greatest detective through brain training', icon: '🧠' },
+      { title: 'Train Like Optimus Prime', desc: 'Master fundamentals, cardio, and warrior mindset', icon: '🤖' },
+      { title: 'Sharpen the Mind', desc: 'Become the world\'s greatest thinker through brain training', icon: '🧠' },
       { title: 'Absolute Discipline', desc: 'No excuses. No shortcuts. Every single day.', icon: '⚡' },
     ],
   },
@@ -43,7 +44,7 @@ const steps = [
     id: 'equipment',
     title: 'Available Equipment',
     subtitle: 'What gear do you have?',
-    description: 'Batman doesn\'t need gadgets to be effective. Neither do you. But knowing what you have helps us build the right plan.',
+    description: 'Optimus Prime doesn\'t need gadgets to be effective. Neither do you. But knowing what you have helps us build the right plan.',
     options: [
       { id: 'none', label: 'Bodyweight Only', icon: '🙌' },
       { id: 'chair', label: 'Chair/Surface', icon: '🪑' },
@@ -54,9 +55,9 @@ const steps = [
   },
   {
     id: 'complete',
-    title: 'You\'re Ready, Agent.',
-    subtitle: 'The Batcave is open.',
-    description: 'Your training program has been generated. The journey to becoming Gotham\'s greatest protector starts September 1st.',
+    title: 'You\'re Ready, Autobot.',
+    subtitle: 'The Ark is open.',
+    description: 'Your training program has been generated. The journey to becoming a Prime-level warrior starts September 1st. Roll out!',
     summary: [
       { label: 'Starting Weight', value: '59 kg' },
       { label: 'Target Weight', value: '52 kg' },
@@ -83,7 +84,7 @@ export default function Onboarding({ onComplete }) {
     if (currentStep === steps.length - 1) {
       dispatch({ type: 'SET_USER', payload: formData });
       dispatch({ type: 'SET_PHASE', payload: 'BEGINNER' });
-      localStorage.setItem('batcomputer_onboarded', 'true');
+      localStorage.setItem('autobot_arc_onboarded', 'true');
       onComplete();
     } else {
       setCurrentStep(s => s + 1);
@@ -119,7 +120,7 @@ export default function Onboarding({ onComplete }) {
         {/* Progress bar */}
         <div className="onboarding-progress">
           <div className="progress-bar">
-            <div className="progress-fill" style={{ width: `${progress}%` }} />
+            <motion.div className="progress-fill" animate={{ width: `${progress}%` }} transition={{ duration: 0.4, ease: 'easeOut' }} />
           </div>
           <div className="step-indicators">
             {steps.map((_, i) => (
@@ -133,55 +134,64 @@ export default function Onboarding({ onComplete }) {
         <AnimatePresence mode="wait">
           <motion.div
             key={currentStep}
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -50 }}
-            transition={{ duration: 0.4 }}
+            exit={{ opacity: 0, x: -30 }}
+            transition={{ duration: 0.35, ease: 'easeOut' }}
             className="onboarding-content"
           >
             {/* Step 0 – Welcome */}
             {currentStep === 0 && (
               <div className="step-welcome">
-                <BatLogo size="large" animated />
-                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>
-                  <h1 className="glow-text">{step.title}</h1>
-                  <h2>{step.subtitle}</h2>
-                  <p>{step.description}</p>
+                <PrimeLogo size="large" animated />
+                <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>
+                  <h1 className="glow-text" style={{ fontFamily: 'var(--font-display)', fontSize: 28, fontWeight: 800, letterSpacing: '-0.02em' }}>{step.title}</h1>
+                  <h2 style={{ fontFamily: 'var(--font-body)', fontSize: 20, fontWeight: 500, color: 'var(--text-secondary)', marginTop: 4 }}>{step.subtitle}</h2>
+                  <p style={{ color: 'var(--text-secondary)', fontSize: 16, lineHeight: 1.6, marginTop: 12 }}>{step.description}</p>
                 </motion.div>
-                <motion.div className="onboarding-stat" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.5 }}>
+                <motion.div className="onboarding-stat" initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.5 }}>
                   <span className="stat-label">{step.stat.label}</span>
                   <span className="stat-value glow-text">{step.stat.value}</span>
                   <span className="stat-sub">{step.stat.sub}</span>
                 </motion.div>
+                <div style={{ marginTop: 20 }}>
+                  <ThemeAudio />
+                </div>
               </div>
             )}
 
             {/* Step 1 – Stats */}
             {currentStep === 1 && (
               <div className="step-form">
-                <h1>{step.title}</h1>
-                <p>{step.description}</p>
+                <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 24, fontWeight: 800, letterSpacing: '-0.02em' }}>{step.title}</h1>
+                <p style={{ color: 'var(--text-secondary)', fontSize: 16, lineHeight: 1.5, marginTop: 4 }}>{step.description}</p>
                 <div className="form-grid">
                   {step.fields.map((field) => (
                     <div key={field.key} className="form-group">
-                      <label>{field.label}</label>
+                      <label style={{ fontSize: 13, fontWeight: 500, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>{field.label}</label>
                       <input
                         type={field.type}
                         value={formData[field.key]}
                         onChange={(e) => setFormData({ ...formData, [field.key]: field.type === 'number' ? parseFloat(e.target.value) || 0 : e.target.value })}
                         placeholder={field.placeholder}
+                        style={{
+                          background: 'var(--bg-card)',
+                          border: '1px solid var(--border-color)',
+                          borderRadius: 'var(--r-md)',
+                          padding: '12px 14px',
+                          fontSize: 16,
+                          color: 'var(--text-primary)',
+                          outline: 'none',
+                          transition: 'border-color 0.2s ease',
+                        }}
                       />
-                      {field.key === 'weight' && (
-                        <span className="form-unit">kg</span>
-                      )}
-                      {field.key === 'height' && (
-                        <span className="form-unit">cm</span>
-                      )}
+                      {field.key === 'weight' && <span className="form-unit">kg</span>}
+                      {field.key === 'height' && <span className="form-unit">cm</span>}
                     </div>
                   ))}
                 </div>
                 <div className="bmi-display">
-                  <span>BMI: <strong>{calculateBMI(formData.weight, formData.height).toFixed(1)}</strong></span>
+                  <span style={{ fontSize: 16, fontWeight: 600 }}>BMI: <strong>{calculateBMI(formData.weight, formData.height).toFixed(1)}</strong></span>
                   <span className="bmi-category">({getBMICategory(calculateBMI(formData.weight, formData.height))})</span>
                 </div>
               </div>
@@ -190,19 +200,19 @@ export default function Onboarding({ onComplete }) {
             {/* Step 2 – Mission */}
             {currentStep === 2 && (
               <div className="step-mission">
-                <h1>{step.title}</h1>
-                <p>{step.description}</p>
+                <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 24, fontWeight: 800, letterSpacing: '-0.02em' }}>{step.title}</h1>
+                <p style={{ color: 'var(--text-secondary)', fontSize: 16, lineHeight: 1.5, marginTop: 4 }}>{step.description}</p>
                 <div className="goals-grid">
                   {step.goals.map((goal, i) => (
                     <motion.div
                       key={i}
                       className="goal-card card"
-                      initial={{ opacity: 0, y: 20 }}
+                      initial={{ opacity: 0, y: 16 }}
                       animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: i * 0.1 }}
+                      transition={{ delay: i * 0.08 }}
                     >
                       <span className="goal-icon">{goal.icon}</span>
-                      <h3>{goal.title}</h3>
+                      <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 16, fontWeight: 700 }}>{goal.title}</h3>
                       <p>{goal.desc}</p>
                     </motion.div>
                   ))}
@@ -213,13 +223,13 @@ export default function Onboarding({ onComplete }) {
             {/* Step 3 – Equipment */}
             {currentStep === 3 && (
               <div className="step-equipment">
-                <h1>{step.title}</h1>
-                <p>{step.description}</p>
+                <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 24, fontWeight: 800, letterSpacing: '-0.02em' }}>{step.title}</h1>
+                <p style={{ color: 'var(--text-secondary)', fontSize: 16, lineHeight: 1.5, marginTop: 4 }}>{step.description}</p>
                 <div className="equipment-grid">
                   {step.options.map((opt) => (
                     <motion.button
                       key={opt.id}
-                      className={`equip-card ${formData.equipment.includes(opt.id) ? 'selected' : ''}`}
+                      className={`equip-card card ${formData.equipment.includes(opt.id) ? 'selected' : ''}`}
                       onClick={() => {
                         setFormData({
                           ...formData,
@@ -228,10 +238,25 @@ export default function Onboarding({ onComplete }) {
                             : [...formData.equipment, opt.id]
                         });
                       }}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
+                      whileHover={{ scale: 1.03 }}
+                      whileTap={{ scale: 0.97 }}
+                      style={{
+                        background: formData.equipment.includes(opt.id) ? 'var(--prime-red-soft)' : 'var(--bg-card)',
+                        border: formData.equipment.includes(opt.id) ? '2px solid var(--prime-red)' : '1px solid var(--border-color)',
+                        borderRadius: 'var(--r-lg)',
+                        padding: '20px 16px',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        gap: 8,
+                        cursor: 'pointer',
+                        fontFamily: 'var(--font-body)',
+                        color: 'var(--text-primary)',
+                        fontSize: 15,
+                        fontWeight: 600,
+                      }}
                     >
-                      <span className="equip-icon">{opt.icon}</span>
+                      <span className="equip-icon" style={{ fontSize: 32 }}>{opt.icon}</span>
                       <span>{opt.label}</span>
                     </motion.button>
                   ))}
@@ -242,20 +267,27 @@ export default function Onboarding({ onComplete }) {
             {/* Step 4 – Complete */}
             {currentStep === 4 && (
               <div className="step-complete">
-                <BatLogo size="medium" animated />
-                <h1 className="glow-text">{step.title}</h1>
-                <p>{step.description}</p>
+                <PrimeLogo size="medium" animated />
+                <h1 className="glow-text" style={{ fontFamily: 'var(--font-display)', fontSize: 26, fontWeight: 800, letterSpacing: '-0.02em' }}>{step.title}</h1>
+                <p style={{ color: 'var(--text-secondary)', fontSize: 16, lineHeight: 1.5, marginTop: 4 }}>{step.description}</p>
                 <div className="summary-grid">
                   {step.summary.map((item, i) => (
                     <motion.div
                       key={i}
-                      className="summary-item"
-                      initial={{ opacity: 0, scale: 0.8 }}
+                      className="summary-item card"
+                      initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: 0.3 + i * 0.1 }}
+                      transition={{ delay: 0.3 + i * 0.08 }}
+                      style={{
+                        padding: '14px 16px',
+                        borderRadius: 'var(--r-lg)',
+                        background: 'var(--bg-card)',
+                        border: '1px solid var(--border-color)',
+                        textAlign: 'center',
+                      }}
                     >
-                      <span className="summary-label">{item.label}</span>
-                      <span className="summary-value glow-text">{item.value}</span>
+                      <span className="summary-label" style={{ fontSize: 12, fontWeight: 500, color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>{item.label}</span>
+                      <span className="summary-value glow-text" style={{ display: 'block', marginTop: 4, fontFamily: 'var(--font-display)', fontSize: 16, fontWeight: 700 }}>{item.value}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -265,15 +297,20 @@ export default function Onboarding({ onComplete }) {
         </AnimatePresence>
 
         {/* Navigation */}
-        <div className="onboarding-nav">
+        <div className="onboarding-nav" style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: 12,
+          paddingTop: 20,
+        }}>
           {currentStep > 0 && (
-            <button className="btn btn-ghost" onClick={handleBack}>
+            <button className="btn btn-secondary" onClick={handleBack} style={{ minWidth: 100 }}>
               ← Back
             </button>
           )}
-          <div className="nav-spacer" />
-          <button className="btn btn-glow" onClick={handleNext}>
-            {currentStep === steps.length - 1 ? '🦇 Enter the Batcave' : 'Continue →'}
+          <div style={{ flex: 1 }} />
+          <button className="btn btn-primary" onClick={handleNext}>
+            {currentStep === steps.length - 1 ? '🤖 Roll Out!' : 'Continue →'}
           </button>
         </div>
       </div>

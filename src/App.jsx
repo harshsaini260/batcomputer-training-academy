@@ -12,13 +12,12 @@ import Journal from './pages/Journal';
 import Progress from './pages/Progress';
 import './styles/global.css';
 
-// Global error handler
 if (typeof window !== 'undefined') {
   window.addEventListener('error', (e) => {
-    console.error('Global error:', e.message, e.filename, e.lineno);
+    console.error('[Autobot] Global error:', e.message, e.filename, e.lineno);
   });
   window.addEventListener('unhandledrejection', (e) => {
-    console.error('Unhandled rejection:', e.reason);
+    console.error('[Autobot] Unhandled rejection:', e.reason);
   });
 }
 
@@ -27,17 +26,17 @@ function AppContent() {
   const [onboarded, setOnboarded] = useState(null);
 
   useEffect(() => {
-    const done = localStorage.getItem('batcomputer_onboarded');
+    const done = localStorage.getItem('autobot_arc_onboarded');
     setOnboarded(done === 'true');
   }, []);
 
   if (onboarded === null) {
     return (
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', color: 'var(--blue-glow)' }}>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '100vh', color: 'var(--prime-red)', background: 'var(--bg-primary)' }}>
         <div style={{ textAlign: 'center' }}>
-          <BatLoader />
-          <p style={{ fontFamily: 'var(--font-mono)', marginTop: '1rem', color: 'var(--text-muted)' }}>
-            Initializing Batcomputer...
+          <PrimeLoader />
+          <p style={{ fontFamily: 'var(--font-mono)', marginTop: '1rem', color: 'var(--text-tertiary)', letterSpacing: '0.05em' }}>
+            Initializing Autobot Arc...
           </p>
         </div>
       </div>
@@ -63,14 +62,14 @@ function AppContent() {
   );
 }
 
-function BatLoader() {
+function PrimeLoader() {
   return (
     <motion.div
-      animate={{ rotate: [0, -5, 5, -3, 3, 0], scale: [1, 1.1, 1] }}
+      animate={{ rotate: [0, -4, 4, -2, 2, 0], scale: [1, 1.05, 1] }}
       transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-      style={{ fontSize: '4rem' }}
+      style={{ fontSize: '3.5rem', filter: 'drop-shadow(0 0 12px rgba(201,26,37,0.6))' }}
     >
-      🦇
+      🤖
     </motion.div>
   );
 }

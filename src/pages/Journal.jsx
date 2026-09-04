@@ -59,8 +59,8 @@ export default function Journal() {
       >
         <div className="jh-top">
           <div>
-            <h1 className="page-title glow-text">Bat-Journal</h1>
-            <p className="page-subtitle">The Dark Knight's greatest weapon is his mind. Document your thoughts.</p>
+            <h1 className="page-title glow-text">Autobot Journal</h1>
+            <p className="page-subtitle">The Matrix of Leadership flows through your mind. Document your thoughts.</p>
           </div>
           <button className="btn btn-glow" onClick={() => setIsWriting(true)}>
             <Plus size={18} /> New Entry
@@ -186,7 +186,7 @@ export default function Journal() {
           >
             <span className="empty-icon">📔</span>
             <h3>No entries yet</h3>
-            <p>Start documenting your journey. Even Batman kept a journal.</p>
+            <p>Start documenting your journey. Even a Prime leader keeps a journal.</p>
             <button className="btn btn-glow" onClick={() => setIsWriting(true)}>
               <Plus size={18} /> Write First Entry
             </button>

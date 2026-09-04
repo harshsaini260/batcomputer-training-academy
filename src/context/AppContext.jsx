@@ -3,7 +3,7 @@ import { ACHIEVEMENTS, MOTIVATION_LEVELS, TRAINING_PHASES } from '../data/traini
 
 const AppContext = createContext(null);
 
-const STORAGE_KEY = 'batcomputer_v1';
+const STORAGE_KEY = 'autobot_arc_v1';
 
 const initialState = {
   user: null,

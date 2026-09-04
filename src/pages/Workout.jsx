@@ -402,11 +402,12 @@ export default function Workout() {
           transition={{ type: 'spring', damping: 15 }}
         >
           <motion.div
-            className="completion-bat"
-            animate={{ rotate: [0, -10, 10, -5, 5, 0] }}
+            className="completion-prime"
+            animate={{ rotate: [0, -10, 10, -5, 5, 0], scale: [1, 1.15, 1] }}
             transition={{ duration: 0.8 }}
+            style={{ fontSize: '4rem', textAlign: 'center' }}
           >
-            🦇
+            🤖
           </motion.div>
           <h1 className="completion-title glow-text">Mission Complete</h1>
           <p className="completion-subtitle">{dayPlan?.name}</p>
@@ -427,7 +428,7 @@ export default function Workout() {
           </div>
 
           <p className="completion-message">
-            Outstanding work, Agent. Gotham just got a little safer.
+            Outstanding work, Autobot. Autobots, roll out — your team is one step closer to victory.
           </p>
 
           <div className="completion-actions">
